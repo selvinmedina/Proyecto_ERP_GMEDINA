@@ -26,14 +26,16 @@ namespace ERP_GMEDINA.Controllers
         public ActionResult GetData()
         {
             var otbTechosDeducciones = db.tbTechosDeducciones
-                        .Select(c => new { cde_DescripcionDeduccion = c.tbCatalogoDeDeducciones.cde_DescripcionDeduccion,
+                        .Select(c => new {
+                            cde_DescripcionDeduccion = c.tbCatalogoDeDeducciones.cde_DescripcionDeduccion,
                             tddu_IdTechosDeducciones = c.tddu_IdTechosDeducciones,
                             tddu_PorcentajeEmpresa = c.tddu_PorcentajeEmpresa,
                             tddu_PorcentajeColaboradores = c.tddu_PorcentajeColaboradores,
                             tddu_Techo = c.tddu_Techo,
                             tddu_Activo = c.tddu_Activo,
-                            tede_FechaCrea = c.tddu_FechaCrea }) 
-                            //.OrderByDescending(c => c.tede_FechaCrea)
+                            tede_FechaCrea = c.tddu_FechaCrea
+                        })
+                        //.OrderByDescending(c => c.tede_FechaCrea)
                         .ToList();
 
             //RETORNAR JSON AL LADO DEL CLIENTE
@@ -69,7 +71,7 @@ namespace ERP_GMEDINA.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create(tbTechosDeducciones tbTechosDeducciones)
+        public JsonResult Create(tbTechosDeducciones tbTechosDeducciones)
         {
             #region declaracion de variables 
             //Llenar los datos de auditoría, de no hacerlo el modelo será inválido y entrará directamente al Catch
@@ -134,7 +136,7 @@ namespace ERP_GMEDINA.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(tbTechosDeducciones tbTechosDeducciones)
+        public JsonResult Edit(tbTechosDeducciones tbTechosDeducciones)
         {
             tbTechosDeducciones.tddu_UsuarioModifica = 1;
             tbTechosDeducciones.tddu_FechaModifica = DateTime.Now;
@@ -196,7 +198,7 @@ namespace ERP_GMEDINA.Controllers
         }
 
         //GET: TechosDeducciones/Inactivar/5    
-        public ActionResult Inactivar(int id)
+        public JsonResult Inactivar(int id)
         {
             IEnumerable<object> listTechosDeducciones = null;
             string MensajeError = "";
@@ -232,11 +234,11 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         //GET: TechosDeducciones/Inactivar/5    
-        public ActionResult Activar(int id)
+        public JsonResult Activar(int id)
         {
             IEnumerable<object> listTechosDeducciones = null;
             string MensajeError = "";
@@ -272,7 +274,7 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

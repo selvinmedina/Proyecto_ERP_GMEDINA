@@ -27,26 +27,26 @@ namespace ERP_GMEDINA.Controllers
         public ActionResult GetData()
         {
             db.Configuration.ProxyCreationEnabled = false;
-			//var tbTipoDeducciones = db.tbTipoDeduccion.ToList().Where(p => p.tde_Activo == true);
+            //var tbTipoDeducciones = db.tbTipoDeduccion.ToList().Where(p => p.tde_Activo == true);
 
-			//var tbPidoDedu = from d in db.tbTipoDeduccion
-			//                 where
+            //var tbPidoDedu = from d in db.tbTipoDeduccion
+            //                 where
 
-			var tbTipoDeducciones = db.tbTipoDeduccion
-				.Select(c => new
-				{
-					tde_Descripcion = c.tde_Descripcion,
-					tde_UsuarioCrea = c.tde_UsuarioCrea,
-					NombreUsuarioCrea = c.tbUsuario.usu_NombreUsuario,
-					tde_FechaCrea = c.tde_FechaCrea,
+            var tbTipoDeducciones = db.tbTipoDeduccion
+                .Select(c => new
+                {
+                    tde_Descripcion = c.tde_Descripcion,
+                    tde_UsuarioCrea = c.tde_UsuarioCrea,
+                    NombreUsuarioCrea = c.tbUsuario.usu_NombreUsuario,
+                    tde_FechaCrea = c.tde_FechaCrea,
 
-					tde_UsuarioModifica = c.tde_UsuarioModifica,
-					NombreUsuarioModifica = c.tbUsuario1.usu_NombreUsuario,
-					tde_FechaModifica = c.tde_FechaModifica,
-					tde_IdTipoDedu = c.tde_IdTipoDedu,
-					tde_Activo = c.tde_Activo
-				});
-                //.OrderByDescending(c => c.tde_FechaCrea).ToList();
+                    tde_UsuarioModifica = c.tde_UsuarioModifica,
+                    NombreUsuarioModifica = c.tbUsuario1.usu_NombreUsuario,
+                    tde_FechaModifica = c.tde_FechaModifica,
+                    tde_IdTipoDedu = c.tde_IdTipoDedu,
+                    tde_Activo = c.tde_Activo
+                });
+            //.OrderByDescending(c => c.tde_FechaCrea).ToList();
 
             return new JsonResult { Data = tbTipoDeducciones, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -57,7 +57,7 @@ namespace ERP_GMEDINA.Controllers
         // POST: TipoDeduccion/Create REALIZAR LA INSERCIÓN
         // GET: TipoDeducciones/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "tde_Descripcion, tde_UsuarioCrea, tde_FechaCrea")] tbTipoDeduccion tbTipoDeduccion)
+        public JsonResult Create([Bind(Include = "tde_Descripcion, tde_UsuarioCrea, tde_FechaCrea")] tbTipoDeduccion tbTipoDeduccion)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbTipoDeduccion.tde_UsuarioCrea = 1;
@@ -165,7 +165,7 @@ namespace ERP_GMEDINA.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "tde_IdTipoDedu,tde_Descripcion,tde_UsuarioCrea,tde_FechaCrea,tde_UsuarioModifica,tde_FechaModifica,tde_Activo")] tbTipoDeduccion tbTipoDeduccion)
+        public JsonResult Edit([Bind(Include = "tde_IdTipoDedu,tde_Descripcion,tde_UsuarioCrea,tde_FechaCrea,tde_UsuarioModifica,tde_FechaModifica,tde_Activo")] tbTipoDeduccion tbTipoDeduccion)
         {
             //DATA DE AUDIOTIRIA DE CREACIÓN, PUESTA UNICAMENTE PARA QUE NO CAIGA EN EL CATCH
             //EN EL PROCEDIMIENTO ALMACENADO, ESTOS DOS CAMPOS NO SE DEBEN MODIFICAR
@@ -226,7 +226,7 @@ namespace ERP_GMEDINA.Controllers
         #region Inactivar
         public JsonResult Inactivar(int? ID)
         {
-            string response = String.Empty;
+            string response = "bien";
             IEnumerable<object> listTipoDeduccion = null;
             string MensajeError = "";
             try
@@ -250,15 +250,15 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
             db.Configuration.ProxyCreationEnabled = false;
-            tbTipoDeduccion tbTipoDeduccionesJSON = db.tbTipoDeduccion.Find(ID);
-            return Json(tbTipoDeduccionesJSON, JsonRequestBehavior.AllowGet);
+            //tbTipoDeduccion tbTipoDeduccionesJSON = db.tbTipoDeduccion.Find(ID);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
         #endregion
 
         #region Activar
         public JsonResult Activar(int? ID)
         {
-            string response = String.Empty;
+            string response = "bien";
             IEnumerable<object> listTipoDeduccion = null;
             string MensajeError = "";
             try

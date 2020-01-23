@@ -14,7 +14,7 @@ namespace ERP_GMEDINA.Controllers
     {
         private ERP_GMEDINAEntities db = new ERP_GMEDINAEntities();
 
-       
+
         #region Index
         public ActionResult Index()
         {
@@ -28,7 +28,7 @@ namespace ERP_GMEDINA.Controllers
             //SELECCIONANDO UNO POR UNO LOS CAMPOS QUE NECESITAREMOS
             //DE LO CONTRARIO, HACERLO DE LA FORMA CONVENCIONAL (EJEMPLO: db.tbCatalogoDeDeducciones.ToList(); )
             var tbEmpleadoComisiones = db.tbEmpleadoComisiones
-                        .Select(c => new { cc_Id = c.cc_Id, emp_Id = c.emp_Id, per_Nombres = c.tbEmpleados.tbPersonas.per_Nombres, per_Apellidos = c.tbEmpleados.tbPersonas.per_Apellidos, cin_IdIngreso = c.cin_IdIngreso, cin_DescripcionIngreso = c.tbCatalogoDeIngresos.cin_DescripcionIngreso, cc_PorcentajeComision = c.cc_PorcentajeComision,cc_TotalVenta = c.cc_TotalVenta, cc_FechaRegistro = c.cc_FechaRegistro, cc_Pagado = c.cc_Pagado, cc_UsuarioCrea = c.cc_UsuarioCrea, cc_FechaCrea = c.cc_FechaCrea, cc_UsuarioModifica = c.cc_UsuarioModifica, cc_FechaModifica = c.cc_FechaModifica,cc_Activo = c.cc_Activo})
+                        .Select(c => new { cc_Id = c.cc_Id, emp_Id = c.emp_Id, per_Nombres = c.tbEmpleados.tbPersonas.per_Nombres, per_Apellidos = c.tbEmpleados.tbPersonas.per_Apellidos, cin_IdIngreso = c.cin_IdIngreso, cin_DescripcionIngreso = c.tbCatalogoDeIngresos.cin_DescripcionIngreso, cc_PorcentajeComision = c.cc_PorcentajeComision, cc_TotalVenta = c.cc_TotalVenta, cc_FechaRegistro = c.cc_FechaRegistro, cc_Pagado = c.cc_Pagado, cc_UsuarioCrea = c.cc_UsuarioCrea, cc_FechaCrea = c.cc_FechaCrea, cc_UsuarioModifica = c.cc_UsuarioModifica, cc_FechaModifica = c.cc_FechaModifica, cc_Activo = c.cc_Activo })
                         .ToList();
             //RETORNAR JSON AL LADO DEL CLIENTE
             return new JsonResult { Data = tbEmpleadoComisiones, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
@@ -60,7 +60,7 @@ namespace ERP_GMEDINA.Controllers
         {
             //OBTENER LA DATA QUE NECESITAMOS, HACIENDOLO DE ESTA FORMA SE EVITA LA EXCEPCION POR "REFERENCIAS CIRCULARES"
             var DDL =
-            from CatIngreso in  db.tbCatalogoDeIngresos.Where(x => x.cin_Activo==true)
+            from CatIngreso in db.tbCatalogoDeIngresos.Where(x => x.cin_Activo == true)
                 //join EmpBonos in db.tbEmpleadoBonos on CatIngreso.cin_IdIngreso equals EmpBonos.cin_IdIngreso
             select new
             {
@@ -76,7 +76,7 @@ namespace ERP_GMEDINA.Controllers
         #region Detalles
         public JsonResult Details(int? ID)
         {
-            var tbEmpleadoComisionesJSON = from tbEmplComisiones in db.tbEmpleadoComisiones 
+            var tbEmpleadoComisionesJSON = from tbEmplComisiones in db.tbEmpleadoComisiones
                                            where tbEmplComisiones.cc_Activo == true && tbEmplComisiones.cc_Id == ID
                                            select new
                                            {
@@ -85,7 +85,7 @@ namespace ERP_GMEDINA.Controllers
                                                NombreEmpleado = tbEmplComisiones.tbEmpleados.tbPersonas.per_Nombres,
                                                ApellidosEmpleado = tbEmplComisiones.tbEmpleados.tbPersonas.per_Apellidos,
                                                tbEmplComisiones.cin_IdIngreso,
-                                               Ingreso =tbEmplComisiones.tbCatalogoDeIngresos.cin_DescripcionIngreso,
+                                               Ingreso = tbEmplComisiones.tbCatalogoDeIngresos.cin_DescripcionIngreso,
                                                tbEmplComisiones.cc_FechaRegistro,
                                                tbEmplComisiones.cc_Pagado,
                                                tbEmplComisiones.cc_Activo,
@@ -111,7 +111,7 @@ namespace ERP_GMEDINA.Controllers
 
         #region Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "emp_Id, cin_IdIngreso, cc_FechaRegistro, cc_Pagado, cc_UsuarioCrea, cc_FechaCrea,cc_PorcentajeComision, cc_TotalVenta")] tbEmpleadoComisiones tbEmpleadoComisiones)
+        public JsonResult Create([Bind(Include = "emp_Id, cin_IdIngreso, cc_FechaRegistro, cc_Pagado, cc_UsuarioCrea, cc_FechaCrea,cc_PorcentajeComision, cc_TotalVenta")] tbEmpleadoComisiones tbEmpleadoComisiones)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbEmpleadoComisiones.cc_FechaRegistro = DateTime.Now;
@@ -119,7 +119,7 @@ namespace ERP_GMEDINA.Controllers
             tbEmpleadoComisiones.cc_FechaCrea = DateTime.Now;
 
             //VARIABLE PARA ALMACENAR EL RESULTADO DEL PROCESO Y ENVIARLO AL LADO DEL CLIENTE
-            string response = String.Empty;
+            string response = "bien";
             IEnumerable<object> listEmpleadoComisiones = null;
             string MensajeError = "";
             //VALIDAR SI EL MODELO ES VÁLIDO
@@ -153,9 +153,6 @@ namespace ERP_GMEDINA.Controllers
                     //EN CASO DE CAER EN EL CATCH, IGUALAMOS LA VARIABLE "RESPONSE" A ERROR PARA VALIDARLO EN EL CLIENTE
                     response = Ex.Message.ToString();
                 }
-                //SI LA EJECUCIÓN LLEGA A ESTE PUNTO SIGNIFICA QUE NO OCURRIÓ NINGÚN ERROR Y EL PROCESO FUE EXITOSO
-                //IGUALAMOS LA VARIABLE "RESPONSE" A "BIEN" PARA VALIDARLO EN EL CLIENTE
-                response = "bien";
             }
             else
             {
@@ -183,7 +180,7 @@ namespace ERP_GMEDINA.Controllers
         #region POST Editar
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cc_Id,emp_Id,cin_IdIngreso,cc_UsuarioModifica,cc_FechaModifica,cc_PorcentajeComision, cc_TotalVenta")] tbEmpleadoComisiones tbEmpleadoComisiones)
+        public JsonResult Edit([Bind(Include = "cc_Id,emp_Id,cin_IdIngreso,cc_UsuarioModifica,cc_FechaModifica,cc_PorcentajeComision, cc_TotalVenta")] tbEmpleadoComisiones tbEmpleadoComisiones)
         {
             tbEmpleadoComisiones.cc_UsuarioModifica = 1;
             tbEmpleadoComisiones.cc_FechaModifica = DateTime.Now;
@@ -192,7 +189,7 @@ namespace ERP_GMEDINA.Controllers
 
             string MensajeError = "";
 
-            string response = String.Empty;
+            string response = "bien";
 
 
             if (ModelState.IsValid)
@@ -243,12 +240,12 @@ namespace ERP_GMEDINA.Controllers
         #region POST Inactivar
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Inactivar(int id)
+        public JsonResult Inactivar(int id)
         {
             IEnumerable<object> listEmpleadoComisiones = null;
             string MensajeError = "";
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
-            string response = String.Empty;
+            string response = "bien";
             if (ModelState.IsValid)
             {
                 try
@@ -273,26 +270,23 @@ namespace ERP_GMEDINA.Controllers
                 {
                     response = "error";
                 }
-                //SI LA EJECUCIÓN LLEGA A ESTE PUNTO SIGNIFICA QUE NO OCURRIÓ NINGÚN ERROR Y EL PROCESO FUE EXITOSO
-                //IGUALAMOS LA VARIABLE "RESPONSE" A "BIEN" PARA VALIDARLO EN EL CLIENTE
-                response = "bien";
             }
             else
             {
                 //Se devuelve un mensaje de error en caso de que el modelo no sea válido
                 response = "error";
             }
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
         #endregion
 
         #region Activar
-        public ActionResult Activar(int id)
+        public JsonResult Activar(int id)
         {
             IEnumerable<object> listEmpleadoComisiones = null;
             string MensajeError = "";
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
-            string response = String.Empty;
+            string response = "bien";
             if (ModelState.IsValid)
             {
                 try
@@ -301,7 +295,7 @@ namespace ERP_GMEDINA.Controllers
                                                                                     1,
                                                                                     DateTime.Now);
 
-                    foreach (UDP_Plani_EmpleadoComisiones_Activar_Result Resultado in listEmpleadoComisiones)
+                    foreach (UDP_Plani_EmpleadoComisiones_Activar_Result1 Resultado in listEmpleadoComisiones)
                         MensajeError = Resultado.MensajeError;
 
                     if (MensajeError.StartsWith("-1"))
@@ -310,13 +304,12 @@ namespace ERP_GMEDINA.Controllers
                         ModelState.AddModelError("", "No se pudo activar el registro. Contacte al administrador.");
                         response = "error";
                     }
-                    
+
                 }
                 catch (Exception ex)
                 {
-                    response = "error";
+                    response = "error" + ex;
                 }
-                response = "bien";
             }
             else
             {
@@ -324,7 +317,7 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
         #endregion
 

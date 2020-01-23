@@ -8,32 +8,26 @@ using ERP_GMEDINA.Models;
 namespace ERP_GMEDINA_TEST.Controllers
 {
     [TestClass]
-    public class FormaPagoController_Test
+    public class TechosDeduccionesController_Test
     {
-        //TEST DE METODOS DE ACCION DEL CONTROLADOR FormaPago
-
-        //APLICACION DE LAS 3 "A" EN EL TESTING 
-        //ARRANGE : PREPARAR 
-        //ACT     : ACTUAR
-        //ASSERT  : AFIRMAR
-
-
-        //Instancia del controlador
-        FormaPagoController _FormaPagoController = new FormaPagoController();
+        TechosDeduccionesController _TechosDeduccionesController = new TechosDeduccionesController();
         //Instancia de la clase
-        tbFormaPago tbFormaPago = new tbFormaPago();
+        tbTechosDeducciones tbTechosDeducciones = new tbTechosDeducciones();
 
         [TestMethod]
-        public void CreateTest()
+        public void Create()
         {
             //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_Descripcion = "TestProject";
-            tbFormaPago.fpa_UsuarioCrea = 1;
-            tbFormaPago.fpa_FechaCrea = DateTime.Now;
+            tbTechosDeducciones.tddu_PorcentajeColaboradores = (decimal)10.05;
+            tbTechosDeducciones.tddu_PorcentajeEmpresa = (decimal)15.50;
+            tbTechosDeducciones.tddu_Techo = (decimal)500.00;
+            tbTechosDeducciones.cde_IdDeducciones = 1;
+            tbTechosDeducciones.tddu_UsuarioCrea = 1;
+            tbTechosDeducciones.tddu_FechaCrea = DateTime.Now;
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -43,7 +37,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Create(tbFormaPago)).Data;
+            ReturnValue = (string)(_TechosDeduccionesController.Create(tbTechosDeducciones)).Data;
 
             //
             //ASSERT
@@ -53,15 +47,20 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
 
         [TestMethod]
-        public void EditarTest()
+        public void Edit()
         {
             //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_IdFormaPago = 1;
-            tbFormaPago.fpa_Descripcion = "TestProject";
+            tbTechosDeducciones.tddu_IdTechosDeducciones = 1;
+            tbTechosDeducciones.tddu_PorcentajeColaboradores = (decimal)10.05;
+            tbTechosDeducciones.tddu_PorcentajeEmpresa = (decimal)15.50;
+            tbTechosDeducciones.tddu_Techo = (decimal)500.00;
+            tbTechosDeducciones.cde_IdDeducciones = 1;
+            tbTechosDeducciones.tddu_UsuarioModifica = 1;
+            tbTechosDeducciones.tddu_FechaModifica = DateTime.Now;
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -71,7 +70,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Editar(tbFormaPago)).Data;
+            ReturnValue = (string)(_TechosDeduccionesController.Edit(tbTechosDeducciones)).Data;
 
             //
             //ASSERT
@@ -81,7 +80,7 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
 
         [TestMethod]
-        public void InactivarTest()
+        public void Inactivar()
         {
             //
             //ARRANGE
@@ -93,7 +92,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Inactivar(1)).Data;
+            ReturnValue = (string)(_TechosDeduccionesController.Inactivar(1)).Data;
 
             //
             //ASSERT
@@ -103,7 +102,7 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
 
         [TestMethod]
-        public void ActivarTest()
+        public void Activar()
         {
             //
             //ARRANGE
@@ -115,7 +114,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Activar(1)).Data;
+            ReturnValue = (string)(_TechosDeduccionesController.Activar(1)).Data;
 
             //
             //ASSERT

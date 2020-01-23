@@ -64,13 +64,13 @@ namespace ERP_GMEDINA.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "aisr_Id,aisr_Descripcion,aisr_Monto,aisr_UsuarioCrea,aisr_FechaCrea,aisr_UsuarioModifica,aisr_FechaModifica,aisr_Activo")] tbAcumuladosISR tbAcumuladosISR)
+        public JsonResult Create([Bind(Include = "aisr_Id,aisr_Descripcion,aisr_Monto,aisr_UsuarioCrea,aisr_FechaCrea,aisr_UsuarioModifica,aisr_FechaModifica,aisr_Activo")] tbAcumuladosISR tbAcumuladosISR)
         {
             #region declaracion de variables 
             tbAcumuladosISR.aisr_UsuarioCrea = 1;
             tbAcumuladosISR.aisr_FechaCrea = DateTime.Now;
             //Variable para almacenar el resultado del proceso y enviarlo al lado del cliente
-            string response = String.Empty;
+            string response = "bien";
             IEnumerable<object> listAcumuladosISR = null;
             string MensajeError = "";
             #endregion
@@ -88,8 +88,6 @@ namespace ERP_GMEDINA.Controllers
                     //RECORRER EL TIPO COMPLEJO DEL PROCEDIMIENTO ALMACENADO PARA EVALUAR EL RESULTADO DEL SP
                     foreach (UDP_Plani_tbAcumuladosISR_Insert_Result Resultado in listAcumuladosISR)
                         MensajeError = Resultado.MensajeError;
-
-                    response = "bien";
                     if (MensajeError.StartsWith("-1"))
                     {
                         //EN CASO DE OCURRIR UN ERROR, IGUALAMOS LA VARIABLE "RESPONSE" A ERROR PARA VALIDARLO EN EL CLIENTE
@@ -100,7 +98,7 @@ namespace ERP_GMEDINA.Controllers
                 catch (Exception Ex)
                 {
                     //EN CASO DE CAER EN EL CATCH, IGUALAMOS LA VARIABLE "RESPONSE" A ERROR PARA VALIDARLO EN EL CLIENTE
-                    response = Ex.Message.ToString();
+                    response = "error" + Ex.Message.ToString();
                 }
 
             }
@@ -122,7 +120,7 @@ namespace ERP_GMEDINA.Controllers
 
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "aisr_Id,aisr_Descripcion,aisr_Monto,aisr_Activo")] tbAcumuladosISR tbAcumuladosISR)
+        public JsonResult Edit([Bind(Include = "aisr_Id,aisr_Descripcion,aisr_Monto,aisr_Activo")] tbAcumuladosISR tbAcumuladosISR)
         {
             //DATA DE AUDIOTIRIA DE CREACIÓN, PUESTA UNICAMENTE PARA QUE NO CAIGA EN EL CATCH
             //EN EL PROCEDIMIENTO ALMACENADO, ESTOS DOS CAMPOS NO SE DEBEN MODIFICAR
@@ -169,23 +167,24 @@ namespace ERP_GMEDINA.Controllers
                 //IGUALAMOS LA VARIABLE "RESPONSE" A "BIEN" PARA VALIDARLO EN EL CLIENTE
                 response = "bien";
             }
-            else {
+            else
+            {
                 // SI EL MODELO NO ES CORRECTO, RETORNAR ERROR
                 ModelState.AddModelError("", "No se pudo modificar el registro, contacte al administrador.");
                 response = "error";
             }
             //ViewBag.tde_IdTipoDedu = new SelectList(db.tbTipoDeduccion, "tde_IdTipoDedu", "tde_Descripcion", tbCatalogoDeDeducciones.tde_IdTipoDedu);
-            
+
             //RETORNAR MENSAJE AL LADO DEL CLIENTE
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Inactivar(int id)
+        public JsonResult Inactivar(int id)
         {
             IEnumerable<object> listAcumuladosISR = null;
             string MensajeError = "";
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
-            string response = String.Empty;
+            string response = "bien";
             if (ModelState.IsValid)
             {
                 try
@@ -208,7 +207,6 @@ namespace ERP_GMEDINA.Controllers
                 {
                     response = "error";
                 }
-                response = "bien";
             }
             else
             {
@@ -216,16 +214,16 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         // GET: TechosDeducciones/Activar/5    
-        public ActionResult Activar(int id)
+        public JsonResult Activar(int id)
         {
             IEnumerable<object> listAcumuladosISR = null;
             string MensajeError = "";
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
-            string response = String.Empty;
+            string response = "bien";
             if (ModelState.IsValid)
             {
                 try
@@ -248,7 +246,6 @@ namespace ERP_GMEDINA.Controllers
                 {
                     response = "error";
                 }
-                response = "bien";
             }
             else
             {
@@ -256,7 +253,7 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)

@@ -8,32 +8,30 @@ using ERP_GMEDINA.Models;
 namespace ERP_GMEDINA_TEST.Controllers
 {
     [TestClass]
-    public class FormaPagoController_Test
+    public class AFPController_Test
     {
-        //TEST DE METODOS DE ACCION DEL CONTROLADOR FormaPago
-
-        //APLICACION DE LAS 3 "A" EN EL TESTING 
-        //ARRANGE : PREPARAR 
-        //ACT     : ACTUAR
-        //ASSERT  : AFIRMAR
-
-
-        //Instancia del controlador
-        FormaPagoController _FormaPagoController = new FormaPagoController();
+        AFPController _AFPController = new AFPController();
         //Instancia de la clase
-        tbFormaPago tbFormaPago = new tbFormaPago();
+        tbAFP tbAFP = new tbAFP();
+
 
         [TestMethod]
-        public void CreateTest()
+        public void Create()
         {
             //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_Descripcion = "TestProject";
-            tbFormaPago.fpa_UsuarioCrea = 1;
-            tbFormaPago.fpa_FechaCrea = DateTime.Now;
+            tbAFP.afp_Descripcion = "HolaMundo";
+            tbAFP.afp_AporteMinimoLps = (int)100.50;
+            tbAFP.afp_InteresAporte = (int)50.20;
+            tbAFP.afp_InteresAnual = (int)40.60;
+            tbAFP.tde_IdTipoDedu = 1;
+            tbAFP.afp_UsuarioCrea= 1;
+            tbAFP.afp_FechaCrea = DateTime.Now;
+
+
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -43,25 +41,32 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Create(tbFormaPago)).Data;
+            ReturnValue = (string)(_AFPController.Create(tbAFP)).Data;
 
             //
             //ASSERT
             //
             Assert.IsTrue(ReturnValue == "bien");
-
         }
 
         [TestMethod]
-        public void EditarTest()
+        public void Edit()
         {
             //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_IdFormaPago = 1;
-            tbFormaPago.fpa_Descripcion = "TestProject";
+            tbAFP.afp_Id = 1;
+            tbAFP.afp_Descripcion = "HolaMundo";
+            tbAFP.afp_AporteMinimoLps = (int)100.50;
+            tbAFP.afp_InteresAporte = (int)50.20;
+            tbAFP.afp_InteresAnual = (int)40.60;
+            tbAFP.tde_IdTipoDedu = 1;
+            tbAFP.afp_UsuarioModifica = 1;
+            tbAFP.afp_FechaModifica = DateTime.Now;
+
+
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -71,17 +76,16 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Editar(tbFormaPago)).Data;
+            ReturnValue = (string)(_AFPController.Edit(tbAFP)).Data;
 
             //
             //ASSERT
             //
             Assert.IsTrue(ReturnValue == "bien");
-
         }
 
         [TestMethod]
-        public void InactivarTest()
+        public void Inactivar()
         {
             //
             //ARRANGE
@@ -93,7 +97,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Inactivar(1)).Data;
+            ReturnValue = (string)(_AFPController.Inactivar(1)).Data;
 
             //
             //ASSERT
@@ -103,7 +107,7 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
 
         [TestMethod]
-        public void ActivarTest()
+        public void Activar()
         {
             //
             //ARRANGE
@@ -115,7 +119,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Activar(1)).Data;
+            ReturnValue = (string)(_AFPController.Activar(1)).Data;
 
             //
             //ASSERT
@@ -125,4 +129,3 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
     }
 }
-

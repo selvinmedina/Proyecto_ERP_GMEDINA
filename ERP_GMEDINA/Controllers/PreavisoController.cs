@@ -154,7 +154,7 @@ namespace ERP_GMEDINA.Controllers
         #region POST: EDITAR
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Editar([Bind(Include = "prea_IdPreaviso,prea_RangoInicioMeses,prea_RangoFinMeses,prea_DiasPreaviso")] tbPreaviso tbPreaviso)
+        public JsonResult Editar([Bind(Include = "prea_IdPreaviso,prea_RangoInicioMeses,prea_RangoFinMeses,prea_DiasPreaviso")] tbPreaviso tbPreaviso)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbPreaviso.prea_UsuarioModifica = 1;
@@ -206,7 +206,7 @@ namespace ERP_GMEDINA.Controllers
         #region POST: INACTIVAR
         // POST: Periodos/Delete/5
         [HttpPost]
-        public ActionResult Inactivar(int? id)
+        public JsonResult Inactivar(int? id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";

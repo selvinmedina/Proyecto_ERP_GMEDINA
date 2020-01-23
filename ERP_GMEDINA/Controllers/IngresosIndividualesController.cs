@@ -52,7 +52,7 @@ namespace ERP_GMEDINA.Controllers
 
         // POST: IngresosIndividuales/Create
         [HttpPost]
-        public ActionResult Create(string ini_Motivo, int emp_Id, decimal ini_Monto, bool ini_PagaSiempre)
+        public JsonResult Create(string ini_Motivo, int emp_Id, decimal ini_Monto, bool ini_PagaSiempre)
         {
             tbIngresosIndividuales tbIngresosIndividuales = new tbIngresosIndividuales
             {
@@ -144,7 +144,7 @@ namespace ERP_GMEDINA.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Edit(int ini_IdIngresosIndividuales, string ini_Motivo, int emp_Id, decimal ini_Monto, bool ini_PagaSiempre)
+        public JsonResult Edit(int ini_IdIngresosIndividuales, string ini_Motivo, int emp_Id, decimal ini_Monto, bool ini_PagaSiempre)
         {
             tbIngresosIndividuales tbIngresosIndividuales = new tbIngresosIndividuales
             {

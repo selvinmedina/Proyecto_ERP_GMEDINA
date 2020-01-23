@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Text;
-using System.Collections.Generic;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ERP_GMEDINA.Controllers;
 using ERP_GMEDINA.Models;
@@ -8,32 +6,24 @@ using ERP_GMEDINA.Models;
 namespace ERP_GMEDINA_TEST.Controllers
 {
     [TestClass]
-    public class FormaPagoController_Test
+    public class PeriodosController_Test
     {
-        //TEST DE METODOS DE ACCION DEL CONTROLADOR FormaPago
 
-        //APLICACION DE LAS 3 "A" EN EL TESTING 
-        //ARRANGE : PREPARAR 
-        //ACT     : ACTUAR
-        //ASSERT  : AFIRMAR
-
+        private PeriodosController controller;
+     
 
         //Instancia del controlador
-        FormaPagoController _FormaPagoController = new FormaPagoController();
+        PeriodosController _PeriodosController = new PeriodosController();
         //Instancia de la clase
-        tbFormaPago tbFormaPago = new tbFormaPago();
-
+        tbPeriodos tbPeriodos = new tbPeriodos();
         [TestMethod]
         public void CreateTest()
-        {
-            //
+        { //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_Descripcion = "TestProject";
-            tbFormaPago.fpa_UsuarioCrea = 1;
-            tbFormaPago.fpa_FechaCrea = DateTime.Now;
+            tbPeriodos.peri_DescripPeriodo = "TestProject";
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -43,14 +33,14 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Create(tbFormaPago)).Data;
+            ReturnValue = (string)(_PeriodosController.Create(tbPeriodos)).Data;
 
             //
             //ASSERT
             //
             Assert.IsTrue(ReturnValue == "bien");
-
         }
+
 
         [TestMethod]
         public void EditarTest()
@@ -60,8 +50,8 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_IdFormaPago = 1;
-            tbFormaPago.fpa_Descripcion = "TestProject";
+            tbPeriodos.peri_IdPeriodo = 1;
+            tbPeriodos.peri_DescripPeriodo = "Test";
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -71,7 +61,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Editar(tbFormaPago)).Data;
+            ReturnValue = (string)(_PeriodosController.Editar(tbPeriodos)).Data;
 
             //
             //ASSERT
@@ -79,6 +69,25 @@ namespace ERP_GMEDINA_TEST.Controllers
             Assert.IsTrue(ReturnValue == "bien");
 
         }
+
+
+        [TestMethod]
+        public void Editar()
+        {
+            //Triple A
+            //Arrange Preparar
+
+            tbPeriodos.peri_IdPeriodo = 1;
+            tbPeriodos.peri_DescripPeriodo = "Test";
+
+            //Act Actuar
+            _PeriodosController.Editar(tbPeriodos);
+
+            //Assert Afirmar
+            Assert.IsTrue(tbPeriodos.peri_IdPeriodo > 0);
+        }
+
+
 
         [TestMethod]
         public void InactivarTest()
@@ -93,7 +102,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Inactivar(1)).Data;
+            ReturnValue = (string)(_PeriodosController.Inactivar(1)).Data;
 
             //
             //ASSERT
@@ -115,7 +124,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Activar(1)).Data;
+            ReturnValue = (string)(_PeriodosController.Activar(1)).Data;
 
             //
             //ASSERT
@@ -123,6 +132,8 @@ namespace ERP_GMEDINA_TEST.Controllers
             Assert.IsTrue(ReturnValue == "bien");
 
         }
+
     }
 }
+
 

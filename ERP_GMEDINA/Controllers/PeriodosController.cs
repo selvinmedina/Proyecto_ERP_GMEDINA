@@ -50,7 +50,7 @@ namespace ERP_GMEDINA.Controllers
         // GET: Periodos/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "peri_IdPeriodo,peri_DescripPeriodo,peri_UsuarioCrea,peri_FechaCrea,peri_Activo")] tbPeriodos tbPeriodos)
+        public JsonResult Create([Bind(Include = "peri_DescripPeriodo,peri_UsuarioCrea,peri_FechaCrea,peri_Activo")] tbPeriodos tbPeriodos)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbPeriodos.peri_UsuarioCrea = 1;
@@ -218,7 +218,7 @@ namespace ERP_GMEDINA.Controllers
         #region POST: INACTIVAR
         // POST: Periodos/Delete/5
         [HttpPost]
-        public ActionResult Inactivar(int? id)
+        public JsonResult Inactivar(int? id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";
@@ -279,7 +279,7 @@ namespace ERP_GMEDINA.Controllers
         #region POST: ACTIVAR
         // POST: Periodos/Delete/5
         [HttpPost]
-        public ActionResult Activar(int? id)
+        public JsonResult Activar(int? id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";

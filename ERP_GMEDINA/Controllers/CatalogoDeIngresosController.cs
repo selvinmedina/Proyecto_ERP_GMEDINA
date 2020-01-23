@@ -46,7 +46,7 @@ namespace ERP_GMEDINA.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "cin_IdIngreso,cin_DescripcionIngreso,cin_UsuarioCrea,cin_FechaCrea,cin_UsuarioModifica,cin_FechaModifica,cin_Activo")] tbCatalogoDeIngresos tbCatalogoDeIngresos)
+        public JsonResult Create([Bind(Include = "cin_IdIngreso,cin_DescripcionIngreso,cin_UsuarioCrea,cin_FechaCrea,cin_UsuarioModifica,cin_FechaModifica,cin_Activo")] tbCatalogoDeIngresos tbCatalogoDeIngresos)
         {
             #region declaracion de variables
             //Auditoria
@@ -129,7 +129,7 @@ namespace ERP_GMEDINA.Controllers
 
 
         [HttpPost]
-        public ActionResult Edit(int id, string cin_DescripcionIngreso)
+        public JsonResult Edit(int id, string cin_DescripcionIngreso)
         {
             tbCatalogoDeIngresos tbCatalogoDeIngresos = new Models.tbCatalogoDeIngresos { cin_DescripcionIngreso = cin_DescripcionIngreso, cin_IdIngreso = id };
             #region declaracion de variables 

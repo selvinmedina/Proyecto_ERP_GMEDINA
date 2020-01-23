@@ -1154,7 +1154,7 @@ namespace ERP_GMEDINA.Controllers
             return Json(new { Data = reporte, Response = response }, JsonRequestBehavior.AllowGet);
         }
 
-        private static decimal SalarioPromedioAnualISR(decimal? netoAPagarColaborador, List<decimal> mesesPago, bool esMensual, ref decimal SalarioPromedioAnualPagadoAlAnio, ref decimal salarioPromedioAnualPagadoAlMes)
+        public static decimal SalarioPromedioAnualISR(decimal? netoAPagarColaborador, List<decimal> mesesPago, bool esMensual, ref decimal SalarioPromedioAnualPagadoAlAnio, ref decimal salarioPromedioAnualPagadoAlMes)
         {
             decimal sueldoProyeccion = 0;
             if (esMensual)

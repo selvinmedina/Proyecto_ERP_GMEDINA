@@ -92,7 +92,31 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\AcumuladosISRController_Test.cs" />
+    <Compile Include="Controllers\AdelantoSueldoController_Test.cs" />
+    <Compile Include="Controllers\AFPController_Test.cs" />
+    <Compile Include="Controllers\AuxilioCesantiaController_Test.cs" />
+    <Compile Include="Controllers\CatalogoDeduccionesController_Test.cs" />
+    <Compile Include="Controllers\CatalogoDeIngresosController_Test.cs" />
+    <Compile Include="Controllers\CatalogoDePlanillasController_Test.cs" />
+    <Compile Include="Controllers\DecimoCuartoMesController_Test.cs" />
+    <Compile Include="Controllers\DecimoTercerMesController_Test.cs" />
+    <Compile Include="Controllers\DeduccionAFPController_Test.cs" />
+    <Compile Include="Controllers\DeduccionesExtraordinariasController_Test.cs" />
+    <Compile Include="Controllers\DeduccionesIndividualesController_Test.cs" />
+    <Compile Include="Controllers\EmpleadoBonosController_Test.cs" />
+    <Compile Include="Controllers\EmpleadoComisionesController_Test.cs" />
+    <Compile Include="Controllers\FechaPlanillaControllerTest.cs" />
     <Compile Include="Controllers\FormaPagoController_Test.cs" />
+    <Compile Include="Controllers\IngresosIndividualesControllerTest.cs" />
+    <Compile Include="Controllers\InstitucionesFinancierasController_Test.cs" />
+    <Compile Include="Controllers\ISRControllerTest.cs" />
+    <Compile Include="Controllers\LiquidacionTest.cs" />
+    <Compile Include="Controllers\PeriodosController_Test.cs" />
+    <Compile Include="Controllers\PlanillasController_Test.cs" />
+    <Compile Include="Controllers\PreavisoController_Test.cs" />
+    <Compile Include="Controllers\TechosDeduccionesController_Test.cs" />
+    <Compile Include="Controllers\TipoDeduccionesController_Test.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

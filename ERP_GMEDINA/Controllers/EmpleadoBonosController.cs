@@ -30,7 +30,7 @@ namespace ERP_GMEDINA.Controllers
                         .Select(c => new { cb_Id = c.cb_Id, emp_Id = c.emp_Id, per_Nombres = c.tbEmpleados.tbPersonas.per_Nombres, per_Apellidos = c.tbEmpleados.tbPersonas.per_Apellidos, cin_IdIngreso = c.cin_IdIngreso, cin_DescripcionIngreso = c.tbCatalogoDeIngresos.cin_DescripcionIngreso, cb_Monto = c.cb_Monto, cb_FechaRegistro = c.cb_FechaRegistro, cb_Pagado = c.cb_Pagado, NombreUsarioCrea = c.tbUsuario.usu_NombreUsuario, cb_UsuarioCrea = c.cb_UsuarioCrea, cb_FechaCrea = c.cb_FechaCrea, usuarioModifica = c.tbUsuario1.usu_NombreUsuario, cb_UsuarioModifica = c.cb_UsuarioModifica, cb_FechaModifica = c.cb_FechaModifica, cb_Activo = c.cb_Activo })
                         .OrderByDescending(x => x.cb_FechaCrea)
                         .ToList();
-                        //.Where(p => p.cb_Activo == true);
+            //.Where(p => p.cb_Activo == true);
             //RETORNAR JSON AL LADO DEL CLIENTE
             return new JsonResult { Data = tbEmpleadoBonos, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
         }
@@ -39,7 +39,7 @@ namespace ERP_GMEDINA.Controllers
         {
             //OBTENER LA DATA QUE NECESITAMOS, HACIENDOLO DE ESTA FORMA SE EVITA LA EXCEPCION POR "REFERENCIAS CIRCULARES"
             var DDL =
-            from Personas in db.tbPersonas            
+            from Personas in db.tbPersonas
             join Empleados in db.tbEmpleados on Personas.per_Id equals Empleados.per_Id
             where Empleados.emp_Estado == true
             select new { Id = Empleados.emp_Id, Descripcion = Personas.per_Nombres + " " + Personas.per_Apellidos };
@@ -79,7 +79,7 @@ namespace ERP_GMEDINA.Controllers
 
         // GET: EmpleadoBonos/Create
         [HttpPost]
-        public ActionResult Create([Bind(Include = "emp_Id, cin_IdIngreso, cb_Monto, cb_FechaRegistro, cb_Pagado, cb_UsuarioCrea, cb_FechaCrea")] tbEmpleadoBonos tbEmpleadoBonos)
+        public JsonResult Create([Bind(Include = "emp_Id, cin_IdIngreso, cb_Monto, cb_FechaRegistro, cb_Pagado, cb_UsuarioCrea, cb_FechaCrea")] tbEmpleadoBonos tbEmpleadoBonos)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbEmpleadoBonos.cb_FechaRegistro = DateTime.Now;
@@ -146,7 +146,7 @@ namespace ERP_GMEDINA.Controllers
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult edit([Bind(Include = "cb_Id, emp_Id, cin_IdIngreso, cb_Monto, cb_FechaRegistro, cb_Pagado, cb_UsuarioModifica, cb_FechaModifica")] tbEmpleadoBonos tbEmpleadoBonos)
+        public JsonResult edit([Bind(Include = "cb_Id, emp_Id, cin_IdIngreso, cb_Monto, cb_FechaRegistro, cb_Pagado, cb_UsuarioModifica, cb_FechaModifica")] tbEmpleadoBonos tbEmpleadoBonos)
         {
             tbEmpleadoBonos.cb_UsuarioModifica = 1;
             tbEmpleadoBonos.cb_FechaModifica = DateTime.Now;
@@ -155,7 +155,7 @@ namespace ERP_GMEDINA.Controllers
 
             string MensajeError = "";
 
-            string response = string.Empty;
+            string response = "bien";
 
 
             if (ModelState.IsValid)
@@ -230,7 +230,7 @@ namespace ERP_GMEDINA.Controllers
         }
 
         [HttpPost]
-        public ActionResult Inactivar(int? Id)
+        public JsonResult Inactivar(int? Id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";
@@ -275,7 +275,7 @@ namespace ERP_GMEDINA.Controllers
         }
 
         [HttpPost]
-        public ActionResult Activar(int? Id)
+        public JsonResult Activar(int? Id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";

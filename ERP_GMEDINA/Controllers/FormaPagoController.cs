@@ -197,7 +197,7 @@ namespace ERP_GMEDINA.Controllers
 
         #region POST: INACTIVAR
         [HttpPost]
-        public ActionResult Inactivar(int? Id)
+        public JsonResult Inactivar(int? Id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";
@@ -257,7 +257,7 @@ namespace ERP_GMEDINA.Controllers
 
         #region POST: ACTIVAR
         [HttpPost]
-        public ActionResult Activar(int? Id)
+        public JsonResult Activar(int? Id)
         {
             //VARIABLE DONDE SE ALMACENARA EL RESULTADO DEL PROCESO
             string response = "bien";

@@ -46,20 +46,20 @@ namespace ERP_GMEDINA.Controllers
         public JsonResult Details(int? ID)
         {
             var tbAuxCesanJSON = from tbAuxilioDeCesantias in db.tbAuxilioDeCesantias
-                                           where tbAuxilioDeCesantias.aces_Activo == true && tbAuxilioDeCesantias.aces_IdAuxilioCesantia == ID
-                                           orderby tbAuxilioDeCesantias.aces_FechaCrea descending
-                                           select new
-                                           {
-                                               tbAuxilioDeCesantias.aces_IdAuxilioCesantia,
-                                               tbAuxilioDeCesantias.aces_RangoInicioMeses,
-                                               tbAuxilioDeCesantias.aces_RangoFinMeses,
-                                               tbAuxilioDeCesantias.aces_DiasAuxilioCesantia,
-                                               UsuCrea = tbAuxilioDeCesantias.tbUsuario.usu_NombreUsuario,
-                                               tbAuxilioDeCesantias.aces_FechaCrea,
-                                               tbAuxilioDeCesantias.aces_UsuarioModifica,
-                                               UsuModifica = tbAuxilioDeCesantias.tbUsuario1.usu_NombreUsuario,
-                                               tbAuxilioDeCesantias.aces_FechaModifica
-                                           };
+                                 where tbAuxilioDeCesantias.aces_Activo == true && tbAuxilioDeCesantias.aces_IdAuxilioCesantia == ID
+                                 orderby tbAuxilioDeCesantias.aces_FechaCrea descending
+                                 select new
+                                 {
+                                     tbAuxilioDeCesantias.aces_IdAuxilioCesantia,
+                                     tbAuxilioDeCesantias.aces_RangoInicioMeses,
+                                     tbAuxilioDeCesantias.aces_RangoFinMeses,
+                                     tbAuxilioDeCesantias.aces_DiasAuxilioCesantia,
+                                     UsuCrea = tbAuxilioDeCesantias.tbUsuario.usu_NombreUsuario,
+                                     tbAuxilioDeCesantias.aces_FechaCrea,
+                                     tbAuxilioDeCesantias.aces_UsuarioModifica,
+                                     UsuModifica = tbAuxilioDeCesantias.tbUsuario1.usu_NombreUsuario,
+                                     tbAuxilioDeCesantias.aces_FechaModifica
+                                 };
 
 
             db.Configuration.ProxyCreationEnabled = false;
@@ -68,7 +68,7 @@ namespace ERP_GMEDINA.Controllers
 
         //Metodo de Creacion de Nuevo registro para la tabla AuxilioCesantia
         [HttpPost]
-        public ActionResult Create(tbAuxilioDeCesantias tbAuxilioDeCesantias)
+        public JsonResult Create([Bind(Include = "aces_RangoInicioMeses,aces_RangoFinMeses,aces_DiasAuxilioCesantia")]tbAuxilioDeCesantias tbAuxilioDeCesantias)
         {
             //Declaracion de variables
             //Auditoria
@@ -78,18 +78,19 @@ namespace ERP_GMEDINA.Controllers
             string response = String.Empty;
             IEnumerable<object> listAuxCesantias = null;
             string MensajeError = "";
-            
+
 
             if (ModelState.IsValid)
             {
                 try
                 {
                     //EJECUTAR PROCEDIMIENTO ALMACENADO
-                    listAuxCesantias = db.UDP_Plani_tbAuxilioDeCesantias_Insert(tbAuxilioDeCesantias.aces_RangoInicioMeses,
+                    listAuxCesantias = db.UDP_Plani_tbAuxilioDeCesantias_Insert(
+                                                                                 tbAuxilioDeCesantias.aces_RangoInicioMeses,
                                                                                 tbAuxilioDeCesantias.aces_RangoFinMeses,
                                                                                 tbAuxilioDeCesantias.aces_DiasAuxilioCesantia,
                                                                                          tbAuxilioDeCesantias.aces_UsuarioCrea,
-                                                                                         tbAuxilioDeCesantias.aces_FechaCrea,tbAuxilioDeCesantias.aces_Activo);
+                                                                                         tbAuxilioDeCesantias.aces_FechaCrea, tbAuxilioDeCesantias.aces_Activo);
                     //RECORRER EL TIPO COMPLEJO DEL PROCEDIMIENTO ALMACENADO PARA EVALUAR EL RESULTADO DEL SP
                     foreach (UDP_Plani_tbAuxilioDeCesantias_Insert_Result Resultado in listAuxCesantias)
                         MensajeError = Resultado.MensajeError;
@@ -118,17 +119,18 @@ namespace ERP_GMEDINA.Controllers
             ViewBag.aces_UsuarioModifica = new SelectList(db.tbUsuario, "usu_Id", "usu_NombreUsuario", tbAuxilioDeCesantias.aces_UsuarioModifica);
             return Json(response, JsonRequestBehavior.AllowGet);
         }
-        
+
         // Obtener: Registro de la tabla AuxilioDeCesantias/Edit
-        public JsonResult Edit(int? ID)
+        public JsonResult Editar(int? ID)
         {
             db.Configuration.ProxyCreationEnabled = false;
             tbAuxilioDeCesantias tbAuxilioCesEditJSON = db.tbAuxilioDeCesantias.Find(ID);
             return Json(tbAuxilioCesEditJSON, JsonRequestBehavior.AllowGet);
         }
+        /*[Bind(Include = "aces_IdAuxilioCesantia,aces_RangoInicioMeses,aces_RangoFinMeses,aces_DiasAuxilioCesantia,aces_Us")]*/
 
         [HttpPost]
-        public ActionResult Edit([Bind(Include = "aces_IdAuxilioCesantia,aces_RangoInicioMeses,aces_RangoFinMeses,aces_DiasAuxilioCesantia,aces_UsuarioCrea,aces_FechaCrea,aces_UsuarioModifica,aces_FechaModifica,aces_Activo")] tbAuxilioDeCesantias tbAuxilioDeCesantias)
+        public JsonResult Edit(tbAuxilioDeCesantias tbAuxilioDeCesantias)
         {
             //Declaracion de variables 
             //LLENAR DATA DE AUDITORIA
@@ -137,15 +139,18 @@ namespace ERP_GMEDINA.Controllers
             string response = String.Empty;
             IEnumerable<object> listAuxCes = null;
             string MensajeError = "";
-           
+
             if (ModelState.IsValid)
             {
                 try
                 {
                     //EJECUTAR PROCEDIMIENTO ALMACENADO
-                    listAuxCes = db.UDP_Plani_tbAuxilioDeCesantias_Update(tbAuxilioDeCesantias.aces_IdAuxilioCesantia,tbAuxilioDeCesantias.aces_RangoInicioMeses,
+                    listAuxCes = db.UDP_Plani_tbAuxilioDeCesantias_Update(tbAuxilioDeCesantias.aces_IdAuxilioCesantia,
+                                                                                            tbAuxilioDeCesantias.aces_RangoInicioMeses,
                                                                                             tbAuxilioDeCesantias.aces_RangoFinMeses,
-                                                                                            tbAuxilioDeCesantias.aces_DiasAuxilioCesantia,tbAuxilioDeCesantias.aces_UsuarioModifica,tbAuxilioDeCesantias.aces_FechaModifica);
+                                                                                            tbAuxilioDeCesantias.aces_DiasAuxilioCesantia,
+                                                                                            tbAuxilioDeCesantias.aces_UsuarioModifica,
+                                                                                            tbAuxilioDeCesantias.aces_FechaModifica);
                     //RECORRER EL TIPO COMPLEJO DEL PROCEDIMIENTO ALMACENADO PARA EVALUAR EL RESULTADO DEL SP
                     foreach (UDP_Plani_tbAuxilioDeCesantias_Update_Result Resultado in listAuxCes)
                         MensajeError = Resultado.MensajeError;
@@ -156,6 +161,7 @@ namespace ERP_GMEDINA.Controllers
                         ModelState.AddModelError("", "No se pudo ingresar el registro, contacte al administrador");
                         response = "error";
                     }
+                    response = "bien";
                 }
                 catch (Exception)
                 {
@@ -176,7 +182,7 @@ namespace ERP_GMEDINA.Controllers
 
         [HttpPost]
         //[ValidateAntiForgeryToken]
-        public ActionResult Inactivar(int ID)
+        public JsonResult Inactivar(int ID)
         {
             string response = String.Empty;
             IEnumerable<object> listAuxilioCesantia = null;
@@ -213,7 +219,7 @@ namespace ERP_GMEDINA.Controllers
             return Json(response, JsonRequestBehavior.AllowGet);
         }
 
-        public ActionResult Activar(int id)
+        public JsonResult Activar(int id)
         {
             IEnumerable<object> listAuxCes = null;
             string MensajeError = "";
@@ -223,7 +229,7 @@ namespace ERP_GMEDINA.Controllers
             {
                 try
                 {
-                    listAuxCes = db.UDP_Plani_tbAuxilioDeCesantias_Activar(id,1,DateTime.Now);
+                    listAuxCes = db.UDP_Plani_tbAuxilioDeCesantias_Activar(id, 1, DateTime.Now);
 
                     foreach (UDP_Plani_tbAuxilioDeCesantias_Activar_Result Resultado in listAuxCes)
                         MensajeError = Resultado.MensajeError;
@@ -247,7 +253,7 @@ namespace ERP_GMEDINA.Controllers
                 response = "error";
             }
 
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
         protected override void Dispose(bool disposing)
@@ -260,3 +266,4 @@ namespace ERP_GMEDINA.Controllers
         }
     }
 }
+

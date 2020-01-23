@@ -199,7 +199,7 @@ namespace ERP_GMEDINA.Controllers
         //FUNCION: EDITAR UN REGISTRO
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "adsu_IdAdelantoSueldo,emp_Id,adsu_RazonAdelanto,adsu_Monto,adsu_UsuarioModifica,adsu_FechaModifica")] tbAdelantoSueldo tbAdelantoSueldo)
+        public JsonResult Edit([Bind(Include = "adsu_IdAdelantoSueldo,emp_Id,adsu_RazonAdelanto,adsu_Monto,adsu_UsuarioModifica,adsu_FechaModifica")] tbAdelantoSueldo tbAdelantoSueldo)
         {
             tbAdelantoSueldo.adsu_UsuarioModifica = 1;
             tbAdelantoSueldo.adsu_FechaModifica = DateTime.Now;

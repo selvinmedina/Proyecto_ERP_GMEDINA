@@ -7,8 +7,9 @@ using ERP_GMEDINA.Models;
 
 namespace ERP_GMEDINA_TEST.Controllers
 {
+
     [TestClass]
-    public class FormaPagoController_Test
+    public class AuxilioCesantiaController_Test
     {
         //TEST DE METODOS DE ACCION DEL CONTROLADOR FormaPago
 
@@ -19,21 +20,23 @@ namespace ERP_GMEDINA_TEST.Controllers
 
 
         //Instancia del controlador
-        FormaPagoController _FormaPagoController = new FormaPagoController();
+        AuxilioDeCesantiasController _auxiliocesantia = new AuxilioDeCesantiasController();
         //Instancia de la clase
-        tbFormaPago tbFormaPago = new tbFormaPago();
+        tbAuxilioDeCesantias tbauxiliocesantia = new tbAuxilioDeCesantias();
 
         [TestMethod]
-        public void CreateTest()
+        public void Create()
         {
             //
             //ARRANGE
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_Descripcion = "TestProject";
-            tbFormaPago.fpa_UsuarioCrea = 1;
-            tbFormaPago.fpa_FechaCrea = DateTime.Now;
+            tbauxiliocesantia.aces_RangoInicioMeses = 1;
+            tbauxiliocesantia.aces_RangoFinMeses = 5;
+            tbauxiliocesantia.aces_DiasAuxilioCesantia = 7;
+            tbauxiliocesantia.aces_UsuarioCrea = 1;
+            tbauxiliocesantia.aces_FechaCrea = DateTime.Now;
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -43,13 +46,12 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Create(tbFormaPago)).Data;
+            ReturnValue = (string)(_auxiliocesantia.Create(tbauxiliocesantia)).Data;
 
             //
             //ASSERT
             //
             Assert.IsTrue(ReturnValue == "bien");
-
         }
 
         [TestMethod]
@@ -60,8 +62,10 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de las propiedades del modelo solicitadas por el método
-            tbFormaPago.fpa_IdFormaPago = 1;
-            tbFormaPago.fpa_Descripcion = "TestProject";
+            tbauxiliocesantia.aces_IdAuxilioCesantia = 2;
+            tbauxiliocesantia.aces_RangoInicioMeses = 7;
+            tbauxiliocesantia.aces_RangoFinMeses = 12;
+            tbauxiliocesantia.aces_DiasAuxilioCesantia = 9;
 
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
@@ -71,7 +75,8 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Editar(tbFormaPago)).Data;
+            ReturnValue = (string)(_auxiliocesantia.Edit(tbauxiliocesantia)).Data;
+
 
             //
             //ASSERT
@@ -79,12 +84,17 @@ namespace ERP_GMEDINA_TEST.Controllers
             Assert.IsTrue(ReturnValue == "bien");
 
         }
-
         [TestMethod]
-        public void InactivarTest()
+        public void Inactivar()
         {
             //
             //ARRANGE
+            //
+
+            //Seteo de las propiedades del modelo solicitadas por el método
+            tbauxiliocesantia.aces_IdAuxilioCesantia = 1;
+
+
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
 
@@ -93,20 +103,25 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Inactivar(1)).Data;
+            ReturnValue = (string)(_auxiliocesantia.Inactivar(tbauxiliocesantia.aces_IdAuxilioCesantia)).Data;
 
             //
             //ASSERT
             //
             Assert.IsTrue(ReturnValue == "bien");
-
         }
 
         [TestMethod]
-        public void ActivarTest()
+        public void Activar()
         {
             //
             //ARRANGE
+            //
+
+            //Seteo de las propiedades del modelo solicitadas por el método
+            tbauxiliocesantia.aces_IdAuxilioCesantia = 1;
+
+
             //Variable para capturar el valor de retorno
             string ReturnValue = string.Empty;
 
@@ -115,7 +130,7 @@ namespace ERP_GMEDINA_TEST.Controllers
             //
 
             //Seteo de la variable para capturar el valor de retorno
-            ReturnValue = (string)(_FormaPagoController.Activar(1)).Data;
+            ReturnValue = (string)(_auxiliocesantia.Activar(tbauxiliocesantia.aces_IdAuxilioCesantia)).Data;
 
             //
             //ASSERT
@@ -125,4 +140,3 @@ namespace ERP_GMEDINA_TEST.Controllers
         }
     }
 }
-

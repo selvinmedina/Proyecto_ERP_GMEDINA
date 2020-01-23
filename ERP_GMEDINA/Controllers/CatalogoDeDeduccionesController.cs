@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using ERP_GMEDINA.Models;
 
-namespace PruebaPlanilla.Controllers
+namespace ERP_GMEDINA.Controllers
 {
     public class CatalogoDeDeduccionesController : Controller
     {
@@ -17,7 +17,7 @@ namespace PruebaPlanilla.Controllers
         // GET: CatalogoDeDeducciones editado
         public ActionResult Index()
         {
-            var tbCatalogoDeDeducciones = db.tbCatalogoDeDeducciones.Include(t => t.tbTipoDeduccion).Include( t => t.tbUsuario).OrderByDescending(x => x.cde_Activo);
+            var tbCatalogoDeDeducciones = db.tbCatalogoDeDeducciones.Include(t => t.tbTipoDeduccion).Include(t => t.tbUsuario).OrderByDescending(x => x.cde_Activo);
             return View(tbCatalogoDeDeducciones.ToList());
         }
 
@@ -33,7 +33,7 @@ namespace PruebaPlanilla.Controllers
                         .ToList();
             //RETORNAR JSON AL LADO DEL CLIENTE
             return new JsonResult { Data = tbCatalogoDeDeducciones1, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
-        }   
+        }
 
 
 
@@ -41,7 +41,7 @@ namespace PruebaPlanilla.Controllers
         // Para protegerse de ataques de publicación excesiva, habilite las propiedades específicas a las que desea enlazarse. Para obtener 
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
-        public ActionResult Create([Bind(Include = "cde_DescripcionDeduccion,tde_IdTipoDedu,cde_PorcentajeColaborador,cde_PorcentajeEmpresa,cde_UsuarioCrea,cde_FechaCrea")] tbCatalogoDeDeducciones tbCatalogoDeDeducciones)
+        public JsonResult Create([Bind(Include = "cde_DescripcionDeduccion,tde_IdTipoDedu,cde_PorcentajeColaborador,cde_PorcentajeEmpresa,cde_UsuarioCrea,cde_FechaCrea")] tbCatalogoDeDeducciones tbCatalogoDeDeducciones)
         {
             //LLENAR LA DATA DE AUDITORIA, DE NO HACERLO EL MODELO NO SERÍA VÁLIDO Y SIEMPRE CAERÍA EN EL CATCH
             tbCatalogoDeDeducciones.cde_UsuarioCrea = 1;
@@ -56,16 +56,16 @@ namespace PruebaPlanilla.Controllers
                 try
                 {
                     //EJECUTAR PROCEDIMIENTO ALMACENADO
-                    listCatalogoDeDeducciones = db.UDP_Plani_tbCatalogoDeDeducciones_Insert(tbCatalogoDeDeducciones.cde_DescripcionDeduccion, 
+                    listCatalogoDeDeducciones = db.UDP_Plani_tbCatalogoDeDeducciones_Insert(tbCatalogoDeDeducciones.cde_DescripcionDeduccion,
                                                                                             tbCatalogoDeDeducciones.tde_IdTipoDedu,
                                                                                             tbCatalogoDeDeducciones.cde_PorcentajeColaborador,
-                                                                                            tbCatalogoDeDeducciones.cde_PorcentajeEmpresa, 
+                                                                                            tbCatalogoDeDeducciones.cde_PorcentajeEmpresa,
                                                                                             tbCatalogoDeDeducciones.cde_UsuarioCrea,
                                                                                             tbCatalogoDeDeducciones.cde_FechaCrea);
                     //RECORRER EL TIPO COMPLEJO DEL PROCEDIMIENTO ALMACENADO PARA EVALUAR EL RESULTADO DEL SP
                     foreach (UDP_Plani_tbCatalogoDeDeducciones_Insert_Result Resultado in listCatalogoDeDeducciones)
                         MensajeError = Resultado.MensajeError;
-                    
+
                     if (MensajeError.StartsWith("-1"))
                     {
                         //EN CASO DE OCURRIR UN ERROR, IGUALAMOS LA VARIABLE "RESPONSE" A ERROR PARA VALIDARLO EN EL CLIENTE
@@ -73,14 +73,15 @@ namespace PruebaPlanilla.Controllers
                         response = "error";
                     }
 
-                }catch (Exception Ex)
+                }
+                catch (Exception Ex)
                 {
                     //EN CASO DE CAER EN EL CATCH, IGUALAMOS LA VARIABLE "RESPONSE" A ERROR PARA VALIDARLO EN EL CLIENTE
                     response = Ex.Message.ToString();
                 }
                 //SI LA EJECUCIÓN LLEGA A ESTE PUNTO SIGNIFICA QUE NO OCURRIÓ NINGÚN ERROR Y EL PROCESO FUE EXITOSO
                 //IGUALAMOS LA VARIABLE "RESPONSE" A "BIEN" PARA VALIDARLO EN EL CLIENTE
-                response = "bien";                
+                response = "bien";
             }
             else
             {
@@ -93,7 +94,7 @@ namespace PruebaPlanilla.Controllers
             ViewBag.tde_IdTipoDedu = new SelectList(db.tbTipoDeduccion, "tde_IdTipoDedu", "tde_Descripcion", tbCatalogoDeDeducciones.tde_IdTipoDedu);
 
             object json = new { response = response, data = GetData() };
-            return Json(json, JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
 
@@ -110,7 +111,7 @@ namespace PruebaPlanilla.Controllers
         // más información vea https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "cde_IdDeducciones,cde_DescripcionDeduccion,tde_IdTipoDedu,cde_PorcentajeColaborador,cde_PorcentajeEmpresa,cde_UsuarioCrea,cde_FechaCrea")] tbCatalogoDeDeducciones tbCatalogoDeDeducciones)
+        public JsonResult Edit(tbCatalogoDeDeducciones tbCatalogoDeDeducciones)
         {
             //DATA DE AUDIOTIRIA DE CREACIÓN, PUESTA UNICAMENTE PARA QUE NO CAIGA EN EL CATCH
             //EN EL PROCEDIMIENTO ALMACENADO, ESTOS DOS CAMPOS NO SE DEBEN MODIFICAR
@@ -159,13 +160,14 @@ namespace PruebaPlanilla.Controllers
                 //IGUALAMOS LA VARIABLE "RESPONSE" A "BIEN" PARA VALIDARLO EN EL CLIENTE
                 response = "bien";
             }
-            else {
+            else
+            {
                 // SI EL MODELO NO ES CORRECTO, RETORNAR ERROR
                 ModelState.AddModelError("", "No se pudo modificar el registro, contacte al administrador.");
                 response = "error";
             }
             ViewBag.tde_IdTipoDedu = new SelectList(db.tbTipoDeduccion, "tde_IdTipoDedu", "tde_Descripcion", tbCatalogoDeDeducciones.tde_IdTipoDedu);
-            
+
             //RETORNAR MENSAJE AL LADO DEL CLIENTE
             return Json(response, JsonRequestBehavior.AllowGet);
         }
@@ -178,7 +180,7 @@ namespace PruebaPlanilla.Controllers
             var DDL =
                 from TipoDedu in db.tbTipoDeduccion
                 where TipoDedu.tde_Activo == true
-                select new { Id = TipoDedu.tde_IdTipoDedu, Descripcion =  TipoDedu.tde_Descripcion };
+                select new { Id = TipoDedu.tde_IdTipoDedu, Descripcion = TipoDedu.tde_Descripcion };
 
             //RETORNAR LA DATA EN FORMATO JSON AL CLIENTE 
             return Json(DDL, JsonRequestBehavior.AllowGet);
@@ -190,22 +192,22 @@ namespace PruebaPlanilla.Controllers
         public JsonResult Details(int? ID)
         {
             var tbCatalogoDeDeduccionesJSON = from tbCatDedu in db.tbCatalogoDeDeducciones
-                                        where tbCatDedu.cde_Activo == true && tbCatDedu.cde_IdDeducciones == ID
-                                        select new
-                                        {
-                                            tbCatDedu.cde_IdDeducciones,
-                                            tbCatDedu.cde_DescripcionDeduccion,
-                                            tbCatDedu.tde_IdTipoDedu,
-                                            tbCatDedu.cde_PorcentajeColaborador,
-                                            tbCatDedu.cde_PorcentajeEmpresa,
-                                            tbCatDedu.cde_Activo,
-                                            tbCatDedu.cde_UsuarioCrea,
-                                            UsuCrea = tbCatDedu.tbUsuario.usu_NombreUsuario,
-                                            tbCatDedu.cde_FechaCrea,
-                                            tbCatDedu.cde_UsuarioModifica,
-                                            UsuModifica = tbCatDedu.tbUsuario1.usu_NombreUsuario,
-                                            tbCatDedu.cde_FechaModifica
-                                        };
+                                              where tbCatDedu.cde_Activo == true && tbCatDedu.cde_IdDeducciones == ID
+                                              select new
+                                              {
+                                                  tbCatDedu.cde_IdDeducciones,
+                                                  tbCatDedu.cde_DescripcionDeduccion,
+                                                  tbCatDedu.tde_IdTipoDedu,
+                                                  tbCatDedu.cde_PorcentajeColaborador,
+                                                  tbCatDedu.cde_PorcentajeEmpresa,
+                                                  tbCatDedu.cde_Activo,
+                                                  tbCatDedu.cde_UsuarioCrea,
+                                                  UsuCrea = tbCatDedu.tbUsuario.usu_NombreUsuario,
+                                                  tbCatDedu.cde_FechaCrea,
+                                                  tbCatDedu.cde_UsuarioModifica,
+                                                  UsuModifica = tbCatDedu.tbUsuario1.usu_NombreUsuario,
+                                                  tbCatDedu.cde_FechaModifica
+                                              };
 
             db.Configuration.ProxyCreationEnabled = false;
             return Json(tbCatalogoDeDeduccionesJSON, JsonRequestBehavior.AllowGet);
@@ -213,7 +215,7 @@ namespace PruebaPlanilla.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Inactivar(int id)
+        public JsonResult Inactivar(int id)
         {
             IEnumerable<object> listCatalogoDeIngresos = null;
             string MensajeError = "";
@@ -252,13 +254,13 @@ namespace PruebaPlanilla.Controllers
                 //Se devuelve un mensaje de error en caso de que el modelo no sea válido
                 response = "error";
             }
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Activar(int id)
+        public JsonResult Activar(int id)
         {
             IEnumerable<object> listCatalogoDeIngresos = null;
             string MensajeError = "";
@@ -296,7 +298,7 @@ namespace PruebaPlanilla.Controllers
                 //Se devuelve un mensaje de error en caso de que el modelo no sea válido
                 response = "error";
             }
-            return Json(JsonRequestBehavior.AllowGet);
+            return Json(response, JsonRequestBehavior.AllowGet);
         }
 
 

@@ -53,12 +53,6 @@ namespace ERP_GMEDINA.Controllers
         #endregion
 
         #region Crear Deducciones Individuales
-        // GET: DeduccionesIndividuales/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
-
         // POST: DeduccionesIndividuales/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -136,7 +130,8 @@ namespace ERP_GMEDINA.Controllers
             from Emp in db.tbEmpleados
             join Per in db.tbPersonas on Emp.per_Id equals Per.per_Id
             where Emp.emp_Estado == true
-            select new {
+            select new
+            {
                 Id = Emp.emp_Id,
                 Descripcion = Per.per_Nombres + " " + Per.per_Apellidos
             };
