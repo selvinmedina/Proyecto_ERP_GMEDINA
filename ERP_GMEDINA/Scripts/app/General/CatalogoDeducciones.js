@@ -169,7 +169,7 @@ $('#btnCreateRegistroDeduccion').click(function () {
     var Correcto3 = true;
     var Correcto4 = true;
 
-    if (cde_DescripcionDeduccionA == "" || cde_DescripcionDeduccionA == null || cde_DescripcionDeduccionA == undefined) {
+    if (cde_DescripcionDeduccionA == "" || cde_DescripcionDeduccionA == null || cde_DescripcionDeduccionA == undefined || cde_DescripcionDeduccion.trim() == '') {
         $("#Crear #cde_DescripcionDeduccionA").val("");
         $("#Crear #AsteriscoDescripcionDedu").addClass("text-danger");
         $("#Crear #Validation_descipcionA").css("display", "");
@@ -391,7 +391,7 @@ $('#btnUpdateDeduccion').click(function () {
     var CorrectoEdit2 = true;
     var CorrectoEdit3 = true;
 
-    if (cde_DescripcionDeduccionE2 == "") {
+    if (cde_DescripcionDeduccionE2 == "" || cde_DescripcionDeduccionE2.trim() == '') {
         $("#Editar #validareditar1").css("display", "block");
         $("#Editar #AsteriscoDescripcionDeduEdit").addClass("text-danger");
         CorrectoEdit = false;
