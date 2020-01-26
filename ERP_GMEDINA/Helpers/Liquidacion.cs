@@ -111,8 +111,6 @@ namespace ERP_GMEDINA.Helpers
 
             //
             //OBTENER SALARIOS
-
-            //OBTENER SALARIOS
             public static object EjecutarCalculosSalarios(int IdEmpleado)
             {
                 decimal SalarioOrdinarioMensual = Calculo_SalarioOrdinarioMensual(IdEmpleado);

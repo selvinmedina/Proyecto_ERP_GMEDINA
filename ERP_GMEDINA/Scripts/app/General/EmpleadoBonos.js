@@ -210,44 +210,6 @@ $('#btnCreateRegistroBonos').click(function () {
         });
 
     }
-    //else {
-    //    if (IdEmpleado == "0") {
-    //        $("#AsteriscoEmpleado").addClass("text-danger");
-    //        $("#Crear #Validation_descipcion2").css("display", "");
-    //        document.getElementById("btnCreateRegistroBonos").disabled = false;
-    //    }
-    //    else {
-    //        $("#AsteriscoEmpleado").removeClass("text-danger");
-    //        $("#Crear #Validation_descipcion2").css("display", "none");
-           
-    //    }
-    //    if (IdIngreso == "0") {
-    //        $("#AsteriscoBono").addClass("text-danger");
-    //        $("#Crear #Validation_descipcion4").css("display", "");         
-    //        document.getElementById("btnCreateRegistroBonos").disabled = false;
-    //    }
-    //    else {
-    //        $("#AsteriscoBono").removeClass("text-danger");
-    //        $("#Crear #Validation_descipcion4").css("display", "none");
- 
-    //    }
-    //    if (Monto == "" || Monto == null || Monto == undefined || Monto <= "0" || Monto == "0") {
-    //        AsteriscoMonto
-    //        $("#AsteriscoMonto").addClass("text-danger");
-    //        $("#Crear #Validation_descipcion6").css("display", "");
-       
-    //        document.getElementById("btnCreateRegistroBonos").disabled = false;
-    //    }
-    //    else if (decimales[1] == null && decimales[1] == undefined) {
-    //        $("#AsteriscoMonto").addClass("text-danger");
-    //        $("#Crear #Validation_descipcion6").css("display", "");
-    //        document.getElementById("btnCreateRegistroBonos").disabled = false;
-    //    }
-    //    else {
-    //        $("#AsteriscoMonto").removeClass("text-danger");         
-    //        $("#Crear #Validation_descipcion6").css("display", "none");
-    //    }
-    //} 
 
 });
 
