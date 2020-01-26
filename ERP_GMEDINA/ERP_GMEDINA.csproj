@@ -2609,10 +2609,6 @@
     <Content Include="Views\CatalogoDePlanillas\Index.cshtml" />
     <Content Include="Views\Planilla\Index.cshtml" />
     <Content Include="Views\Planilla\_GenerarPlanillaConfiguracion.cshtml" />
-    <Content Include="Views\TechosDeducciones\Create.cshtml" />
-    <Content Include="Views\TechosDeducciones\Delete.cshtml" />
-    <Content Include="Views\TechosDeducciones\Details.cshtml" />
-    <Content Include="Views\TechosDeducciones\Edit.cshtml" />
     <Content Include="Views\TechosDeducciones\Index.cshtml" />
     <Content Include="Views\TechosDeducciones\_CreateTechosDeducciones.cshtml" />
     <Content Include="Views\TechosDeducciones\_DetailsTechosDeducciones.cshtml" />
