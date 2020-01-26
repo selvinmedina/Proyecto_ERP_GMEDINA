@@ -2796,11 +2796,6 @@
     <Content Include="Views\RazonSalidas\_Delete.cshtml" />
     <Content Include="Views\RazonSalidas\_Detalles.cshtml" />
     <Content Include="Views\RazonSalidas\_Edit.cshtml" />
-    <Content Include="Views\RequerimientosEspeciales\Index.cshtml" />
-    <Content Include="Views\RequerimientosEspeciales\_Create.cshtml" />
-    <Content Include="Views\RequerimientosEspeciales\_Delete.cshtml" />
-    <Content Include="Views\RequerimientosEspeciales\_Detalles.cshtml" />
-    <Content Include="Views\RequerimientosEspeciales\_Edit.cshtml" />
     <Content Include="Views\Requisiciones\Create.cshtml" />
     <Content Include="Views\Requisiciones\Delete.cshtml" />
     <Content Include="Views\Requisiciones\Details.cshtml" />
@@ -2892,6 +2887,11 @@
     <Content Include="Views\Titulos\_Edit.cshtml" />
     <Content Include="Views\FechaPlanilla\ReporteDeHistorialDeDeducciones.cshtml" />
     <Content Include="Views\FechaPlanilla\ReporteDeHistorialDeIngresos.cshtml" />
+    <Content Include="Views\RequerimientosEspeciales\Index.cshtml" />
+    <Content Include="Views\RequerimientosEspeciales\_Create.cshtml" />
+    <Content Include="Views\RequerimientosEspeciales\_Delete.cshtml" />
+    <Content Include="Views\RequerimientosEspeciales\_Detalles.cshtml" />
+    <Content Include="Views\RequerimientosEspeciales\_Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
