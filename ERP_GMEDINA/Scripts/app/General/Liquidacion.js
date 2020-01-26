@@ -479,3 +479,8 @@ $('.ValidarCaracteres').bind('keypress', function (event) {
     } 
 });
 
+
+//EVITAR EL POSTBACK DEL FORMULARIO 
+$("#frmConceptosAdicionales").submit(function (e) {
+    e.preventDefault();
+});
