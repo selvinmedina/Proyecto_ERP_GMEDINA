@@ -70,7 +70,9 @@ namespace ERP_GMEDINA.Controllers
                     // ejecutar PA
                     listPeriodo = db.UDP_Plani_tbPeriodos_Insert(tbPeriodos.peri_DescripPeriodo,
                                                                             tbPeriodos.peri_UsuarioCrea,
-                                                                            tbPeriodos.peri_FechaCrea);
+                                                                            tbPeriodos.peri_FechaCrea,
+                                                                            true,
+                                                                            1);
                     
                     // obtener resultado del PA
                     foreach (UDP_Plani_tbPeriodos_Insert_Result resultado in listPeriodo)
@@ -151,7 +153,9 @@ namespace ERP_GMEDINA.Controllers
                     listPeriodo = db.UDP_Plani_tbPeriodos_Update(tbPeriodos.peri_IdPeriodo,
                                                                     tbPeriodos.peri_DescripPeriodo,
                                                                     tbPeriodos.peri_UsuarioModifica,
-                                                                    tbPeriodos.peri_FechaModifica);
+                                                                    tbPeriodos.peri_FechaModifica,
+                                                                    true,
+                                                                    1);
                     
                     // obtener resultado del PA
                     foreach (UDP_Plani_tbPeriodos_Update_Result resultado in listPeriodo)

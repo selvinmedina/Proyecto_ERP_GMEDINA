@@ -2030,7 +2030,6 @@
     <Content Include="Scripts\plugins\mascarasDeEntrada\js\jquery.inputmask.extensions.js" />
     <Content Include="Scripts\plugins\mascarasDeEntrada\js\jquery.inputmask.js" />
     <Content Include="Scripts\plugins\mascarasDeEntrada\js\jquery.inputmask.numeric.extensions.js" />
-    <Content Include="Scripts\Scripts_Base\Planilla.js" />
     <Content Include="Scripts\app\General\Preaviso.js" />
     <Content Include="Scripts\app\General\RAPRPT.js" />
     <Content Include="Scripts\app\General\SerializeDate.js" />
@@ -2977,7 +2976,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>51144</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>

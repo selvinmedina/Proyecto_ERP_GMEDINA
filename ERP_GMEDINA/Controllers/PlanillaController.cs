@@ -1030,7 +1030,14 @@ namespace ERP_GMEDINA.Controllers
                                                                                                 oHistorialPagoEncabezado.hipa_TotalVacaciones,
                                                                                                 oHistorialPagoEncabezado.hipa_TotalSeptimoDia,
                                                                                                 oHistorialPagoEncabezado.hipa_AdelantoSueldo,
-                                                                                                oHistorialPagoEncabezado.hipa_TotalSalario
+                                                                                                oHistorialPagoEncabezado.hipa_TotalSalario,
+                                                                                                // nuevos campos
+                                                                                                1,// deducciones individuales
+                                                                                                1,// ingresos individuales
+                                                                                                1,// sueldo bruto
+                                                                                                1,// cantidad unidades horas extras
+                                                                                                1,// cantidad unidades bonos
+                                                                                                1 // total bonos
                                                                                                 );
 
                                         //RECORRER EL TIPO COMPLEJO DEL PROCEDIMIENTO ALMACENADO PARA EVALUAR EL RESULTADO DEL SP
