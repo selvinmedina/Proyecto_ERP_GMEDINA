@@ -200,6 +200,7 @@ namespace ERP_GMEDINA.Controllers
                 }
             //}
         }
+        
 
         //GET: CALCULAR LIQUIDACION
         [HttpPost]

@@ -393,7 +393,6 @@ $(document).on("click", "#tblAdelantoSueldo tbody tr td #btnEditarAdelantoSueldo
         NombreSelect = data.per_Nombres;
         //LLENAR EL DROPDOWNLIST
         $("#Editar #emp_Id").append("<option value='" + idEmpSelect + "' selected>" + NombreSelect + "</option>");
-        console.log($("#Editar #emp_Id").children("option:selected").val());
 
         $.ajax({
             url: "/AdelantoSueldo/Edit/" + ID,

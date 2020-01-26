@@ -229,7 +229,7 @@ function ValidarCamposCrear(colaborador, Ingreso, monto) {
 
     if (colaborador != "-1") {
 
-        if (colaborador <= 0 || isNaN(colaborador || colaborador == "0")) {
+        if (colaborador <= 0 || isNaN(colaborador) || colaborador == "0") {
             pasoValidacion = false;
             //MOSTRAR VALIDACIONES
             $('#Crear #Validation_IdEmpleado').css("display", "block");
@@ -290,7 +290,7 @@ function ValidarCamposEditar(colaborador, Ingreso, monto) {
 
     if (colaborador != "-1") {
 
-        if (colaborador <= 0 || isNaN(colaborador || colaborador == "0")) {
+        if (colaborador <= 0 || isNaN(colaborador) || colaborador == "0") {
             pasoValidacion = false;
             //MOSTRAR VALIDACIONES
             $('#Editar #Validation_IdEmpleado').css("display", "block");
