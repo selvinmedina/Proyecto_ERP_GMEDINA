@@ -114,7 +114,7 @@
                 @using (Html.BeginForm("UploadDocumento", "Empleados", FormMethod.Post, new { @enctype = "multipart/form-data", @Id = "FormEmpleadosDocument" }))
                 {
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-12"  id="FileUpload_Expediente">
                             <div class="fileinput fileinput-new" data-provides="fileinput">
                                 <span class="btn btn-default btn-file">
                                     <span class="fileinput-new">Seleccionar documento</span><span class="fileinput-exists">Cambiar documento </span>
