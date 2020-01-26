@@ -42,7 +42,7 @@ const btnGuardar = $('#btnGuardarCatalogoDePlanillasIngresosDeducciones'), //Bot
 
 //#region Funciones
 //Funcion generica para reutilizar AJAX
-function _ajax(params, uri, type, callback, enviar) {
+function _ajax(params, uri, type, callback, enviar, error) {
 	$.ajax({
 		url: uri,
 		type: type,
@@ -54,6 +54,9 @@ function _ajax(params, uri, type, callback, enviar) {
 		},
 		success: function (data) {
 			callback(data);
+		},
+		error: function (XMLHttpRequest, textStatus, errorThrown) {
+			error(XMLHttpRequest, textStatus, errorThrown);
 		}
 	});
 }
@@ -102,7 +105,14 @@ var crearEditar = function (edit) {
 					ocultarSpinner($('#btnGuardarCatalogoDePlanillasIngresosDeducciones'), cargandoCrear);
 				}
 			},
-			(enviar) => { }
+			(enviar) => { },
+			(XMLHttpRequest, textStatus, errorThrown) => {
+				ocultarSpinner($('#btnGuardarCatalogoDePlanillasIngresosDeducciones'), cargandoCrear);
+				iziToast.error({
+					title: 'Error',
+					message: 'Verifique su conexión a internet. Si el problema persiste contacte al administrador.'
+				});
+			}
 		);
 	} else {
 		let idPlanilla = inputIdPlanilla.val();
@@ -129,10 +139,17 @@ var crearEditar = function (edit) {
 						title: 'Error',
 						message: 'No se editó el registro, contacte al administrador'
 					});
-					ocultarSpinnerSpinner($('#btnConfirmacionEdit'), cargandoEditar);
+					ocultarSpinner($('#btnConfirmacionEdit'), cargandoEditar);
 				}
 			},
-			(enviar) => { }
+			(enviar) => { },
+			(XMLHttpRequest, textStatus, errorThrown) => {
+				ocultarSpinner($('#btnConfirmacionEdit'), cargandoEditar);
+				iziToast.error({
+					title: 'Error',
+					message: 'Verifique su conexión a internet. Si el problema persiste contacte al administrador.'
+				});
+			}
 		);
 	}
 };
@@ -676,6 +693,31 @@ function listarCatalogos() {
 				}
 			}
 		});
+
+		_ajax(
+			null,
+			'/CatalogoDePlanillas/getPeriodos/',
+			'GET',
+			(data) => {
+				console.log(data);
+				inputFrecuenciaEnDias.select2({
+					placeholder: 'Seleccione un peridos',
+					allowClear: true,
+					language: {
+						noResults: function () {
+							return 'Resultados no encontrados.';
+						},
+						searching: function () {
+							return 'Buscando...';
+						}
+					},
+					data: data.data
+				});
+			},
+			() => { },
+			() => { }
+		);
+		//inputFrecuenciaEnDias.select2('val', 7);;
 	} //crear
 	else {
 		//Ingresos
@@ -708,7 +750,7 @@ function listarCatalogos() {
 			],
 			"order": [[1, "asc"]],
 			initComplete: function (settings, json) {
-			
+
 				$('#tblCatalogoIngresos tbody tr td .i-checks').iCheck({
 					checkboxClass: 'icheckbox_square-green',
 					radioClass: 'iradio_square-green'
@@ -989,7 +1031,14 @@ function obtenerDetalles(id, handleData) {
 		'/CatalogoDePlanillas/getDeduccionIngresos/' + id,
 		'GET',
 		(data) => handleData(data),
-		() => { }
+		() => { },
+		(enviar) => { },
+		(XMLHttpRequest, textStatus, errorThrown) => {
+			iziToast.error({
+				title: 'Error',
+				message: 'Verifique su conexión a internet. Si el problema persiste contacte al administrador.'
+			});
+		}
 	);
 }
 //#endregion
@@ -1248,7 +1297,14 @@ $('#InactivarCatalogoDeducciones #btnInactivarPlanilla').click(() => {
 			}
 			ocultarSpinner($('#btnInactivarPlanilla'), cargandoEliminar);
 		},
-		(enviar) => { }
+		(enviar) => { },
+		(XMLHttpRequest, textStatus, errorThrown) => {
+			ocultarSpinner($('#btnInactivarPlanilla'), cargandoEliminar);
+			iziToast.error({
+				title: 'Error',
+				message: 'Verifique su conexión a internet. Si el problema persiste contacte al administrador.'
+			});
+		}
 	);
 });
 
@@ -1277,6 +1333,13 @@ $(document).on('click', '#btnActivarCatatalogoPlanilla', () => {
 			ocultarSpinner($('#btnActivarCatatalogoPlanilla'), $('#cargandoActivar'));
 		},
 		() => {
+		},
+		(XMLHttpRequest, textStatus, errorThrown) => {
+			ocultarSpinner($('#btnActivarCatatalogoPlanilla'), $('#cargandoActivar'));
+			iziToast.error({
+				title: 'Error',
+				message: 'Verifique su conexión a internet. Si el problema persiste contacte al administrador.'
+			});
 		})
 });
 //#endregion
