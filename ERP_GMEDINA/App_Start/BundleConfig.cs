@@ -543,9 +543,7 @@ namespace ERP_GMEDINA
                 "~/Scripts/app/General/CatalogoPlanillas.js"));
 
             // SCRIPT GENERAL
-            bundles.Add(new ScriptBundle("~/Scripts/app/general").Include(
-             "~/Scripts/plugins/iziToast/iziToast.js",
-             "~/Scripts/plugins/iziToast/iziToast.min.js",
+            bundles.Add(new ScriptBundle("~/Scripts/app/general/general").Include(
              "~/Scripts/app/general/general.js"));
 
             //bundles APP/GENERAL
