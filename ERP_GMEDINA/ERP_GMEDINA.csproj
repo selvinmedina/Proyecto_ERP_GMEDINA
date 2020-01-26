@@ -1971,7 +1971,6 @@
     <Content Include="Scripts\app\General\IHSSRPT.js" />
     <Content Include="Scripts\app\General\INFOPRPT.js" />
     <Content Include="Scripts\app\General\IngresosIndividuales.js" />
-    <Content Include="Scripts\app\General\InstitucionesFinancierasEdit.js" />
     <Content Include="Scripts\app\General\InstitucionesFinancierasIndex.js" />
     <Content Include="Scripts\app\General\InstitucionesFinancierasRPT.js" />
     <Content Include="Scripts\app\General\ISR.js" />
@@ -2595,8 +2594,6 @@
     <Content Include="Views\DeduccionesExtraordinarias\Details.cshtml" />
     <Content Include="Views\DeduccionesExtraordinarias\Edit.cshtml" />
     <Content Include="Views\DeduccionesExtraordinarias\Index.cshtml" />
-    <Content Include="Views\EmpleadoComisiones\Details.cshtml" />
-    <Content Include="Views\EmpleadoComisiones\Edit.cshtml" />
     <Content Include="Views\EmpleadoComisiones\Index.cshtml" />
     <Content Include="Views\EmpleadoComisiones\_CreateEmpleadoComisiones.cshtml" />
     <Content Include="Views\EmpleadoComisiones\_DetalleEmpleadoComisiones.cshtml" />
@@ -2610,7 +2607,6 @@
     <Content Include="Views\AcumuladosISR\_DetailsTechosDeducciones.cshtml" />
     <Content Include="Views\AcumuladosISR\_EditTechosDeducciones.cshtml" />
     <Content Include="Views\CatalogoDeIngresos\Index.cshtml" />
-    <Content Include="Views\CatalogoDeIngresos\_CatalogoDeIngresos.cshtml" />
     <Content Include="Views\CatalogoDeIngresos\_CreateCatalogoDeIngresos.cshtml" />
     <Content Include="Views\CatalogoDeIngresos\_DetailCatalogoDeIngreso.cshtml" />
     <Content Include="Views\CatalogoDeIngresos\_EditCatalogoDeIngresos.cshtml" />
@@ -2680,7 +2676,6 @@
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\DeduccionAFP\_DetailsDeduccionAFP.cshtml" />
     <Content Include="Views\CatalogoDeIngresos\_ActivarCatalogoDeIngreso.cshtml" />
-    <Content Include="Views\EmpleadoComisiones\_ActivarEmpleadoComisiones.cshtml" />
     <Content Include="Views\TipoDeducciones\_DetailsTipoDeducciones.cshtml" />
     <Content Include="Views\FechaPlanilla\ComprobanteEmpleadoEncabezado.cshtml" />
     <Content Include="Views\FechaPlanilla\Create.cshtml" />
@@ -2917,6 +2912,9 @@
     <Content Include="Views\ReportesRRHH\Requisicion.cshtml" />
     <Content Include="Views\ReportesRRHH\SueldosRPT.cshtml" />
     <Content Include="Views\ErrorPages\ErrorConnectionDB.cshtml" />
+    <Content Include="Views\InstitucionesFinancieras\_Create.cshtml" />
+    <Content Include="Views\InstitucionesFinancieras\_Details.cshtml" />
+    <Content Include="Views\InstitucionesFinancieras\_Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

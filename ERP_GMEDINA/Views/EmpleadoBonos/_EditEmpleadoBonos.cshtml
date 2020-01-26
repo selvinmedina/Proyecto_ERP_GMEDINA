@@ -11,7 +11,7 @@
                             <label class="pull-left">Número</label>
                         </div>
                         <div class="col-md-8 pull-right">
-                            @Html.EditorFor(model => model.cb_Id, new { htmlAttributes = new { @class = "form-control", @id = "cb_Id", @disabled = "disabled" } })
+                            @Html.EditorFor(model => model.cb_Id, new { htmlAttributes = new { @class = "form-control", @id = "cb_Id", @disabled = "disabled", @autocomplete = "off" } })
                             <label class="text-danger" id="Validation_descipcion" style="display:none; opacity: 1; font-family: open sans, Helvetica Neue, Helvetica, Arial, sans-serif; font-weight: normal;">No puede dejar campos vacios.</label>
                         </div>
                     </div>
