@@ -2579,10 +2579,6 @@
     <Content Include="Views\Shared\_Navigation.cshtml" />
     <Content Include="Views\Shared\_SkinConfig.cshtml" />
     <Content Include="Views\Shared\_TopNavbar.cshtml" />
-    <Content Include="Views\CatalogoDeDeducciones\Create.cshtml" />
-    <Content Include="Views\CatalogoDeDeducciones\Delete.cshtml" />
-    <Content Include="Views\CatalogoDeDeducciones\Details.cshtml" />
-    <Content Include="Views\CatalogoDeDeducciones\Edit.cshtml" />
     <Content Include="Views\CatalogoDeDeducciones\Index.cshtml" />
     <Content Include="Views\CatalogoDeDeducciones\_CreateCatalogoDeducciones.cshtml" />
     <Content Include="Views\CatalogoDeDeducciones\_DetalleCatalogoDeDeducciones.cshtml" />
@@ -2598,10 +2594,6 @@
     <Content Include="Views\EmpleadoComisiones\_CreateEmpleadoComisiones.cshtml" />
     <Content Include="Views\EmpleadoComisiones\_DetalleEmpleadoComisiones.cshtml" />
     <Content Include="Views\EmpleadoComisiones\_EditEmpleadoComisiones.cshtml" />
-    <Content Include="Views\AcumuladosISR\Create.cshtml" />
-    <Content Include="Views\AcumuladosISR\Delete.cshtml" />
-    <Content Include="Views\AcumuladosISR\Details.cshtml" />
-    <Content Include="Views\AcumuladosISR\Edit.cshtml" />
     <Content Include="Views\AcumuladosISR\Index.cshtml" />
     <Content Include="Views\AcumuladosISR\_CreateTechosDeducciones.cshtml" />
     <Content Include="Views\AcumuladosISR\_DetailsTechosDeducciones.cshtml" />
@@ -2625,10 +2617,6 @@
     <Content Include="Views\TechosDeducciones\_DetailsTechosDeducciones.cshtml" />
     <Content Include="Views\TechosDeducciones\_EditTechosDeducciones.cshtml" />
     <Content Include="Views\InstitucionesFinancieras\CargaDocumento.cshtml" />
-    <Content Include="Views\InstitucionesFinancieras\Create.cshtml" />
-    <Content Include="Views\InstitucionesFinancieras\Delete.cshtml" />
-    <Content Include="Views\InstitucionesFinancieras\Details.cshtml" />
-    <Content Include="Views\InstitucionesFinancieras\Edit.cshtml" />
     <Content Include="Views\InstitucionesFinancieras\Index.cshtml" />
     <Content Include="Views\DecimoCuartoMes\FechaEspecifica.cshtml" />
     <Content Include="Views\DecimoCuartoMes\Index.cshtml" />
@@ -2678,10 +2666,6 @@
     <Content Include="Views\CatalogoDeIngresos\_ActivarCatalogoDeIngreso.cshtml" />
     <Content Include="Views\TipoDeducciones\_DetailsTipoDeducciones.cshtml" />
     <Content Include="Views\FechaPlanilla\ComprobanteEmpleadoEncabezado.cshtml" />
-    <Content Include="Views\FechaPlanilla\Create.cshtml" />
-    <Content Include="Views\FechaPlanilla\Delete.cshtml" />
-    <Content Include="Views\FechaPlanilla\Details.cshtml" />
-    <Content Include="Views\FechaPlanilla\Edit.cshtml" />
     <Content Include="Views\FechaPlanilla\Index.cshtml" />
     <Content Include="Views\FechaPlanilla\Report.cshtml" />
     <Content Include="Views\IngresosIndividuales\Index.cshtml" />
@@ -2915,6 +2899,8 @@
     <Content Include="Views\Titulos\_Delete.cshtml" />
     <Content Include="Views\Titulos\_Detalles.cshtml" />
     <Content Include="Views\Titulos\_Edit.cshtml" />
+    <Content Include="Views\FechaPlanilla\ReporteDeHistorialDeDeducciones.cshtml" />
+    <Content Include="Views\FechaPlanilla\ReporteDeHistorialDeIngresos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
