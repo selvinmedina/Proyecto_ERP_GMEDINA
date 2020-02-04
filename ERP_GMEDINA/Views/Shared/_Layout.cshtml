@@ -29,15 +29,19 @@
             </div>
         </div>*@
     <div class="container body-content">
-        @RenderBody()        
-        <footer>
-            <br />
-            <p><b>&copy; @DateTime.Now.Year - Asociación Hondureña de Maquiladores &copy;</b></p>
-        </footer>
+        @RenderBody()  
     </div>
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
 </body>
+<footer>
+        <nav class="navbar navbar-fixed-bottom" role="navigation" id="navBottom">
+            <ul class="nav navbar-top-links navbar-right" id="ulMenu">
+                <p><b>&copy; @DateTime.Now.Year - Asociación Hondureña de Maquiladores &copy;</b></p>
+
+            </ul>
+        </nav>
+    </nav>
+</footer>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("scripts", required: false)
 </html>
