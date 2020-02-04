@@ -485,6 +485,10 @@ namespace ERP_GMEDINA
 
             bundles.Add(new StyleBundle("~/Content/plugins/izitoast/iziToast.min").Include(
                       "~/Content/plugins/izitoast/iziToast.min.css"));
+
+            //Backgroung-Main
+            bundles.Add(new StyleBundle("~/Content/background").Include(
+               "~/Content/background.css"));
             #endregion
 
             #region Planillas
