@@ -300,6 +300,7 @@
     <Compile Include="Models\cAreas.cs" />
     <Compile Include="Models\CatalogoDeIngresosViewModel.cs" />
     <Compile Include="Models\cAuxilioDeCesantias.cs" />
+    <Compile Include="Models\cCalculoImpuestoVecinal.cs" />
     <Compile Include="Models\cCargos.cs" />
     <Compile Include="Models\cCatalogoDeDeducciones.cs" />
     <Compile Include="Models\cCatalogoDePlanillas.cs" />
@@ -3008,6 +3009,7 @@
     <Content Include="Views\TechosComisiones\_DetailsTechosComisiones.cshtml" />
     <Content Include="Views\TechosComisiones\_EditTechosComisiones.cshtml" />
     <Content Include="Views\TechosComisiones\Index.cshtml" />
+    <Content Include="Views\TechoImpuestoVecinal\IndexCalculoImpuestoVecinal.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
