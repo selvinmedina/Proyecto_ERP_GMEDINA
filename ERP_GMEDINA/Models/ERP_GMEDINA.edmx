@@ -687,8 +687,8 @@
           <Property Name="car_FechaCrea" Type="datetime" Nullable="false" />
           <Property Name="car_UsuarioModifica" Type="int" />
           <Property Name="car_FechaModifica" Type="datetime" />
-          <Property Name="car_SalarioMinimo" Type="decimal" Precision="16" Scale="4" Nullable="false" />
-          <Property Name="car_SalarioMaximo" Type="decimal" Precision="16" Scale="4" />
+          <Property Name="car_SueldoMinimo" Type="decimal" Precision="16" Scale="4" Nullable="false" />
+          <Property Name="car_SueldoMaximo" Type="decimal" Precision="16" Scale="4" />
         </EntityType>
         <EntityType Name="tbCompetencias">
           <Key>
@@ -3651,9 +3651,10 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_Sueldos' does not have a primar
             <PropertyRef Name="Sueldo" />
             <PropertyRef Name="Area" />
             <PropertyRef Name="Cargo" />
-            <PropertyRef Name="Sueldo_Maximo" />
+            
             <PropertyRef Name="Usuario_Crea" />
             <PropertyRef Name="Estado" />
+            <PropertyRef Name="Sueldo_Maximo" />
           </Key>
           <Property Name="Id" Type="int" Nullable="false" />
           <Property Name="Id_Empleado" Type="int" Nullable="false" />
@@ -3668,7 +3669,7 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_Sueldos' does not have a primar
           <Property Name="Area" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Cargo" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="Sueldo_Maximo" Type="decimal" Precision="16" Scale="4" Nullable="false" />
-          <Property Name="Sueldo_Minimo" Type="decimal" Precision="16" Scale="4" />
+          <Property Name="Sueldo_Minimo" Type="decimal" Precision="16" Scale="4" Nullable="false" />
           <Property Name="Usuario_Nombre" Type="varchar" MaxLength="150" />
           <Property Name="Usuario_Crea" Type="int" Nullable="false" />
           <Property Name="Fecha_Crea" Type="datetime" />
@@ -6556,6 +6557,18 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior">
+          <End Role="tbCargos" Type="Self.tbCargos" Multiplicity="0..1" />
+          <End Role="tbHistorialCargos" Type="Self.tbHistorialCargos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCargos">
+              <PropertyRef Name="car_Id" />
+            </Principal>
+            <Dependent Role="tbHistorialCargos">
+              <PropertyRef Name="car_IdAnterior" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo">
           <End Role="tbCargos" Type="Self.tbCargos" Multiplicity="1" />
           <End Role="tbHistorialCargos" Type="Self.tbHistorialCargos" Multiplicity="*" />
@@ -8287,8 +8300,8 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
         </Function>
         <Function Name="UDP_RRHH_tbCargos_Insert" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rrhh">
           <Parameter Name="car_Descripcion" Type="nvarchar" Mode="In" />
-          <Parameter Name="car_SalarioMinimo" Type="decimal" Mode="In" />
-          <Parameter Name="car_SalarioMaximo" Type="decimal" Mode="In" />
+          <Parameter Name="car_SueldoMinimo" Type="decimal" Mode="In" />
+          <Parameter Name="car_SueldoMaximo" Type="decimal" Mode="In" />
           <Parameter Name="car_UsuarioCrea" Type="int" Mode="In" />
           <Parameter Name="car_FechaCrea" Type="datetime" Mode="In" />
         </Function>
@@ -8301,8 +8314,8 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
         <Function Name="UDP_RRHH_tbCargos_Update" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="rrhh">
           <Parameter Name="car_Id" Type="int" Mode="In" />
           <Parameter Name="car_Descripcion" Type="nvarchar" Mode="In" />
-          <Parameter Name="car_SalarioMinimo" Type="decimal" Mode="In" />
-          <Parameter Name="car_SalarioMaximo" Type="decimal" Mode="In" />
+          <Parameter Name="car_SueldoMinimo" Type="decimal" Mode="In" />
+          <Parameter Name="car_SueldoMaximo" Type="decimal" Mode="In" />
           <Parameter Name="car_UsuarioModifica" Type="int" Mode="In" />
           <Parameter Name="car_FechaModifica" Type="datetime" Mode="In" />
         </Function>
@@ -11830,6 +11843,10 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
             <End Role="tbCargos" EntitySet="tbCargos" />
             <End Role="tbEmpleados" EntitySet="tbEmpleados" />
           </AssociationSet>
+          <AssociationSet Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior" Association="Self.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior">
+            <End Role="tbCargos" EntitySet="tbCargos" />
+            <End Role="tbHistorialCargos" EntitySet="tbHistorialCargos" />
+          </AssociationSet>
           <AssociationSet Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" Association="Self.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo">
             <End Role="tbCargos" EntitySet="tbCargos" />
             <End Role="tbHistorialCargos" EntitySet="tbHistorialCargos" />
@@ -12879,8 +12896,8 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           </FunctionImport>
           <FunctionImport Name="UDP_RRHH_tbCargos_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_RRHH_tbCargos_Insert_Result)">
             <Parameter Name="car_Descripcion" Mode="In" Type="String" />
-            <Parameter Name="car_SalarioMinimo" Mode="In" Type="Decimal" />
-            <Parameter Name="car_SalarioMaximo" Mode="In" Type="Decimal" />
+            <Parameter Name="car_SueldoMinimo" Mode="In" Type="Decimal" />
+            <Parameter Name="car_SueldoMaximo" Mode="In" Type="Decimal" />
             <Parameter Name="car_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="car_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -12893,8 +12910,8 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <FunctionImport Name="UDP_RRHH_tbCargos_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_RRHH_tbCargos_Update_Result)">
             <Parameter Name="car_Id" Mode="In" Type="Int32" />
             <Parameter Name="car_Descripcion" Mode="In" Type="String" />
-            <Parameter Name="car_SalarioMinimo" Mode="In" Type="Decimal" />
-            <Parameter Name="car_SalarioMaximo" Mode="In" Type="Decimal" />
+            <Parameter Name="car_SueldoMinimo" Mode="In" Type="Decimal" />
+            <Parameter Name="car_SueldoMaximo" Mode="In" Type="Decimal" />
             <Parameter Name="car_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="car_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
@@ -15384,8 +15401,8 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
             <Parameter Name="req_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="req_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <EntitySet Name="tbCargos" EntityType="ERP_GMEDINAModel.tbCargos" />
           <EntitySet Name="V_tbPagoDeCesantiaDetalle" EntityType="ERP_GMEDINAModel.V_tbPagoDeCesantiaDetalle" />
+          <EntitySet Name="tbCargos" EntityType="ERP_GMEDINAModel.tbCargos" />
           <AssociationSet Name="FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea" Association="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea">
             <End Role="tbUsuario" EntitySet="tbUsuario" />
             <End Role="tbCargos" EntitySet="tbCargos" />
@@ -15405,6 +15422,10 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <AssociationSet Name="FK_rrhh_tbCargos_car_Id_rrhh_tbEmpleados_car_Id" Association="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbEmpleados_car_Id">
             <End Role="tbCargos" EntitySet="tbCargos" />
             <End Role="tbEmpleados" EntitySet="tbEmpleados" />
+          </AssociationSet>
+          <AssociationSet Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior" Association="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior">
+            <End Role="tbCargos" EntitySet="tbCargos" />
+            <End Role="tbHistorialCargos" EntitySet="tbHistorialCargos" />
           </AssociationSet>
           <AssociationSet Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" Association="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo">
             <End Role="tbCargos" EntitySet="tbCargos" />
@@ -16573,7 +16594,7 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <NavigationProperty Name="tbPorcentajeMotivoLiquidacion1" Relationship="ERP_GMEDINAModel.FK_Plani_tbUsuario_usu_Id_tbPorcentajeMotivoLiquidacion_pml_UsuarioModifica" FromRole="tbUsuario" ToRole="tbPorcentajeMotivoLiquidacion" />
           <NavigationProperty Name="tbCargos" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea" FromRole="tbUsuario" ToRole="tbCargos" />
           <NavigationProperty Name="tbCargos1" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioModifica" FromRole="tbUsuario" ToRole="tbCargos" />
-        </EntityType>
+          </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
             <PropertyRef Name="diagram_id" />
@@ -17633,8 +17654,9 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <NavigationProperty Name="tbEmpleados" Relationship="ERP_GMEDINAModel.FK_rrhh_tbEmpleados_emp_Id_rrhh_tbHistorialCargos_emp_Id" FromRole="tbHistorialCargos" ToRole="tbEmpleados" />
           <NavigationProperty Name="tbJornadas" Relationship="ERP_GMEDINAModel.FK_rrhh_tbJornadas_jor_Id_rrhh_tbHistorialCargos_jor_IdAnterior" FromRole="tbHistorialCargos" ToRole="tbJornadas" />
           <NavigationProperty Name="tbJornadas1" Relationship="ERP_GMEDINAModel.FK_rrhh_tbJornadas_jor_Id_rrhh_tbHistorialCargos_jor_IdNuevo" FromRole="tbHistorialCargos" ToRole="tbJornadas" />
-          <NavigationProperty Name="tbCargos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" FromRole="tbHistorialCargos" ToRole="tbCargos" />
-        </EntityType>
+          <NavigationProperty Name="tbCargos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior" FromRole="tbHistorialCargos" ToRole="tbCargos" />
+          <NavigationProperty Name="tbCargos1" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" FromRole="tbHistorialCargos" ToRole="tbCargos" />
+          </EntityType>
         <EntityType Name="tbHistorialContrataciones">
           <Key>
             <PropertyRef Name="hcon_Id" />
@@ -20257,7 +20279,7 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <Property Name="Area" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Cargo" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
           <Property Name="Sueldo_Maximo" Type="Decimal" Nullable="false" Precision="16" Scale="4" />
-          <Property Name="Sueldo_Minimo" Type="Decimal" Precision="16" Scale="4" />
+          <Property Name="Sueldo_Minimo" Type="Decimal" Precision="16" Scale="4" Nullable="false" />
           <Property Name="Usuario_Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="false" />
           <Property Name="Usuario_Crea" Type="Int32" Nullable="false" />
           <Property Name="Fecha_Crea" Type="DateTime" Precision="3" />
@@ -23946,27 +23968,6 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
         <ComplexType Name="UDP_RRHH_tbHistorialCargos_Degradar_Result">
           <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="10" />
         </ComplexType>
-        <EntityType Name="tbCargos">
-          <Key>
-            <PropertyRef Name="car_Id" />
-          </Key>
-          <Property Name="car_Id" Type="Int32" Nullable="false" />
-          <Property Name="car_Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
-          <Property Name="car_Estado" Type="Boolean" Nullable="false" />
-          <Property Name="car_RazonInactivo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
-          <Property Name="car_UsuarioCrea" Type="Int32" Nullable="false" />
-          <Property Name="car_FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="car_UsuarioModifica" Type="Int32" />
-          <Property Name="car_FechaModifica" Type="DateTime" Precision="3" />
-          <NavigationProperty Name="tbUsuario" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea" FromRole="tbCargos" ToRole="tbUsuario" />
-          <NavigationProperty Name="tbUsuario1" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioModifica" FromRole="tbCargos" ToRole="tbUsuario" />
-          <NavigationProperty Name="tbAreas" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbAreas_car_Id" FromRole="tbCargos" ToRole="tbAreas" />
-          <NavigationProperty Name="tbDepartamentos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbDepartamentos_car_Id" FromRole="tbCargos" ToRole="tbDepartamentos" />
-          <NavigationProperty Name="tbEmpleados" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbEmpleados_car_Id" FromRole="tbCargos" ToRole="tbEmpleados" />
-          <NavigationProperty Name="tbHistorialCargos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" FromRole="tbCargos" ToRole="tbHistorialCargos" />
-          <Property Name="car_SalarioMinimo" Type="Decimal" Nullable="false" Precision="16" Scale="4" />
-          <Property Name="car_SalarioMaximo" Type="Decimal" Precision="16" Scale="4" />
-        </EntityType>
         <EntityType Name="V_tbPagoDeCesantiaDetalle">
           <Key>
             <PropertyRef Name="IdCesantia" />
@@ -23985,6 +23986,28 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
           <Property Name="SueldoBrutoDiario" Type="Decimal" Nullable="false" Precision="16" Scale="2" />
           <Property Name="TotalCesantiaPRO" Type="Decimal" Nullable="false" Precision="16" Scale="2" />
           <Property Name="NoDeCuenta" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityType Name="tbCargos">
+          <Key>
+            <PropertyRef Name="car_Id" />
+          </Key>
+          <Property Name="car_Id" Type="Int32" Nullable="false" />
+          <Property Name="car_Descripcion" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="car_Estado" Type="Boolean" Nullable="false" />
+          <Property Name="car_RazonInactivo" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="car_UsuarioCrea" Type="Int32" Nullable="false" />
+          <Property Name="car_FechaCrea" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="car_UsuarioModifica" Type="Int32" />
+          <Property Name="car_FechaModifica" Type="DateTime" Precision="3" />
+          <Property Name="car_SueldoMinimo" Type="Decimal" Nullable="false" Precision="16" Scale="4" />
+          <Property Name="car_SueldoMaximo" Type="Decimal" Precision="16" Scale="4" />
+          <NavigationProperty Name="tbUsuario" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea" FromRole="tbCargos" ToRole="tbUsuario" />
+          <NavigationProperty Name="tbUsuario1" Relationship="ERP_GMEDINAModel.FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioModifica" FromRole="tbCargos" ToRole="tbUsuario" />
+          <NavigationProperty Name="tbAreas" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbAreas_car_Id" FromRole="tbCargos" ToRole="tbAreas" />
+          <NavigationProperty Name="tbDepartamentos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbDepartamentos_car_Id" FromRole="tbCargos" ToRole="tbDepartamentos" />
+          <NavigationProperty Name="tbEmpleados" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbEmpleados_car_Id" FromRole="tbCargos" ToRole="tbEmpleados" />
+          <NavigationProperty Name="tbHistorialCargos" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior" FromRole="tbCargos" ToRole="tbHistorialCargos" />
+          <NavigationProperty Name="tbHistorialCargos1" Relationship="ERP_GMEDINAModel.FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdNuevo" FromRole="tbCargos" ToRole="tbHistorialCargos" />
         </EntityType>
         <Association Name="FK_Acce_tbUsuario_usu_Id_rrhh_tbCargos_car_UsuarioCrea">
           <End Type="ERP_GMEDINAModel.tbUsuario" Role="tbUsuario" Multiplicity="1" />
@@ -24043,6 +24066,18 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
             </Principal>
             <Dependent Role="tbEmpleados">
               <PropertyRef Name="car_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_rrhh_tbCargos_car_Id_rrhh_tbHistorialCargos_car_IdAnterior">
+          <End Type="ERP_GMEDINAModel.tbCargos" Role="tbCargos" Multiplicity="0..1" />
+          <End Type="ERP_GMEDINAModel.tbHistorialCargos" Role="tbHistorialCargos" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="tbCargos">
+              <PropertyRef Name="car_Id" />
+            </Principal>
+            <Dependent Role="tbHistorialCargos">
+              <PropertyRef Name="car_IdAnterior" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -29213,22 +29248,6 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <EntitySetMapping Name="tbCargos">
-            <EntityTypeMapping TypeName="ERP_GMEDINAModel.tbCargos">
-              <MappingFragment StoreEntitySet="tbCargos">
-                <ScalarProperty Name="car_SalarioMaximo" ColumnName="car_SalarioMaximo" />
-                <ScalarProperty Name="car_SalarioMinimo" ColumnName="car_SalarioMinimo" />
-                <ScalarProperty Name="car_FechaModifica" ColumnName="car_FechaModifica" />
-                <ScalarProperty Name="car_UsuarioModifica" ColumnName="car_UsuarioModifica" />
-                <ScalarProperty Name="car_FechaCrea" ColumnName="car_FechaCrea" />
-                <ScalarProperty Name="car_UsuarioCrea" ColumnName="car_UsuarioCrea" />
-                <ScalarProperty Name="car_RazonInactivo" ColumnName="car_RazonInactivo" />
-                <ScalarProperty Name="car_Estado" ColumnName="car_Estado" />
-                <ScalarProperty Name="car_Descripcion" ColumnName="car_Descripcion" />
-                <ScalarProperty Name="car_Id" ColumnName="car_Id" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="V_tbPagoDeCesantiaDetalle">
             <EntityTypeMapping TypeName="ERP_GMEDINAModel.V_tbPagoDeCesantiaDetalle">
               <MappingFragment StoreEntitySet="V_tbPagoDeCesantiaDetalle">
@@ -29240,6 +29259,22 @@ warning 6002: The table/view 'ERP_GMEDINA.rrhh.V_tbtiposalidas' does not have a 
                 <ScalarProperty Name="NoIdentidad" ColumnName="NoIdentidad" />
                 <ScalarProperty Name="NoColaborador" ColumnName="NoColaborador" />
                 <ScalarProperty Name="IdCesantia" ColumnName="IdCesantia" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tbCargos">
+            <EntityTypeMapping TypeName="ERP_GMEDINAModel.tbCargos">
+              <MappingFragment StoreEntitySet="tbCargos">
+                <ScalarProperty Name="car_SueldoMaximo" ColumnName="car_SueldoMaximo" />
+                <ScalarProperty Name="car_SueldoMinimo" ColumnName="car_SueldoMinimo" />
+                <ScalarProperty Name="car_FechaModifica" ColumnName="car_FechaModifica" />
+                <ScalarProperty Name="car_UsuarioModifica" ColumnName="car_UsuarioModifica" />
+                <ScalarProperty Name="car_FechaCrea" ColumnName="car_FechaCrea" />
+                <ScalarProperty Name="car_UsuarioCrea" ColumnName="car_UsuarioCrea" />
+                <ScalarProperty Name="car_RazonInactivo" ColumnName="car_RazonInactivo" />
+                <ScalarProperty Name="car_Estado" ColumnName="car_Estado" />
+                <ScalarProperty Name="car_Descripcion" ColumnName="car_Descripcion" />
+                <ScalarProperty Name="car_Id" ColumnName="car_Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

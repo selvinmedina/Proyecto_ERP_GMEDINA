@@ -21,14 +21,13 @@ namespace ERP_GMEDINA.Models
         [MaxLength(50, ErrorMessage = "Excedió el número máximo de caracteres.")]
         public string car_Descripcion { get; set; }
 
-        [Display(Name = "Salario minimo")]
+        [Display(Name = "Salario Mínimo")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "El campo \"{0}\" es requerido.")]
-       
-        public decimal car_SalarioMinimo { get; set; }
+        public decimal car_SueldoMinimo { get; set; }
 
-        [Display(Name = "Salario maximo")]
+        [Display(Name = "Salario Máximo")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "El campo \"{0}\" es requerido.")]
-        public Nullable<decimal> car_SalarioMaximo { get; set; }
+        public Nullable<decimal> car_SueldoMaximo { get; set; }
 
 
         [Display(Name = "Estado")]

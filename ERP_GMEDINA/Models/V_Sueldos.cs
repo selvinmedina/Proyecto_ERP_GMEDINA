@@ -19,7 +19,7 @@ namespace ERP_GMEDINA.Models
         public string Area { get; set; }
         public string Cargo { get; set; }
         public decimal Sueldo_Maximo { get; set; }
-        public Nullable<decimal> Sueldo_Minimo { get; set; }
+        public decimal Sueldo_Minimo { get; set; }
         public string Usuario_Nombre { get; set; }
         public int Usuario_Crea { get; set; }
         public Nullable<System.DateTime> Fecha_Crea { get; set; }
