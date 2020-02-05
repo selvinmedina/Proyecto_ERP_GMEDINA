@@ -447,8 +447,8 @@ namespace ERP_GMEDINA.Controllers
                 {
 
                     Departamentos.AddRange(db.tbDepartamentos
-                    .Select(tabla => new { Id = tabla.depto_Id, Descripcion = tabla.depto_Descripcion, Estado = tabla.depto_Estado })
-                    .Where(x => x.Estado && x.Id == id).ToList());
+                    .Select(tabla => new { Id = tabla.depto_Id, area_Id = tabla.area_Id, Descripcion = tabla.depto_Descripcion, Estado = tabla.depto_Estado })
+                    .Where(x => x.Estado && x.area_Id == id).ToList());
                 }
                 catch
                 {
