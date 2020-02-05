@@ -107,16 +107,20 @@ $("#btnInactivar").click(function () {
 
 //botones POST
 $("#btnGuardar").click(function () {
-    if ($("#car_SueldoMinimo").val() >= $("#car_SueldoMaximo").val()) {
-        MsgError("Error", "Sueldo máximo debe ser mayor al sueldo mínimo");
-    }
 
-    else {
+    var data = $("#FormNuevo").serializeArray();
+    data = serializar(data);
+    if (data != null) {
+        let a = parseFloat(data.car_SueldoMinimo);
+        let b = parseFloat(data.car_SueldoMaximo);
 
-
-        var data = $("#FormNuevo").serializeArray();
-        data = serializar(data);
-        if (data != null) {
+        if (a>= b)
+        {
+         
+            MsgError("Error", "Sueldo máximo debe ser mayor al sueldo mínimo");
+        
+        }
+        else{
             data = JSON.stringify({ tbCargos: data });
             _ajax(data,
                 '/Cargos/Create',
@@ -125,7 +129,7 @@ $("#btnGuardar").click(function () {
                     if (obj != "-1" && obj != "-2" && obj != "-3") {
                         CierraPopups();
                         MsgSuccess("¡Éxito!", "El registro se agregó de forma exitosa.");
-                        LimpiarControles(["car_Descripcion", "car_RazonInactivo"]);
+                        LimpiarControles(["car_Descripcion", "car_RazonInactivo","car_SueldoMaximo","car_SueldoMinimo"]);
                         llenarTabla();
 
                     } else {
@@ -133,10 +137,12 @@ $("#btnGuardar").click(function () {
                     }
                 });
         }
-        else {
-            MsgError("Error", "Por favor llene todas las cajas de texto.");
-        }
     }
+    else {
+        MsgError("Error", "Por favor llene todas las cajas de texto.");
+    }
+   
+
 });
 
 $("#InActivar").click(function () {
@@ -164,30 +170,37 @@ $("#InActivar").click(function () {
 });
 
 $("#btnActualizar").click(function () {
-    if ($("#car_SueldoMinimo").val() >= $("#car_SueldoMaximo").val()) {
-        MsgError("Error", "Sueldo máximo debe ser mayor al sueldo mínimo");
-    }
+    var data = $("#FormEditar").serializeArray();
+    data = serializar(data); if (data != null) {
+        let a = parseFloat(data.car_SueldoMinimo);
+        let b = parseFloat(data.car_SueldoMaximo);
 
-    else {
-        var data = $("#FormEditar").serializeArray();
-        data = serializar(data);
-        if (data != null) {
-            data.car_Id = id;
-            data = JSON.stringify({ tbCargos: data });
-            _ajax(data,
-                '/Cargos/Edit',
-                'POST',
-                function (obj) {
-                    if (obj != "-1" && obj != "-2" && obj != "-3") {
-                        CierraPopups();
-                        MsgSuccess("¡Éxito!", "El registro se editó de forma exitosa.");
-                        llenarTabla();
-                    } else {
-                        MsgError("Error", "No se editó el registro, contacte al administrador.");
-                    }
-                });
-        } else {
-            MsgError("Error", "Por favor llene todas las cajas de texto.");
+        if (a >= b) {
+
+            MsgError("Error", "Sueldo máximo debe ser mayor al sueldo mínimo");
+
+        }
+        else {
+
+          
+            if (data != null) {
+                data.car_Id = id;
+                data = JSON.stringify({ tbCargos: data });
+                _ajax(data,
+                    '/Cargos/Edit',
+                    'POST',
+                    function (obj) {
+                        if (obj != "-1" && obj != "-2" && obj != "-3") {
+                            CierraPopups();
+                            MsgSuccess("¡Éxito!", "El registro se editó de forma exitosa.");
+                            llenarTabla();
+                        } else {
+                            MsgError("Error", "No se editó el registro, contacte al administrador.");
+                        }
+                    });
+            } else {
+                MsgError("Error", "Por favor llene todas las cajas de texto.");
+            }
         }
     }
 });
