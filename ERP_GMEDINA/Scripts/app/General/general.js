@@ -92,18 +92,6 @@ function _ajax(params, uri, type, callback) {
  });
 }
 function serializar(data) {
- var Modals = $(".modal");
- var modal;
- if (Modals.length == 0) {
-  Modals = $("form");
-  modal = Modals[0];
- }
- var primerInput = true;
- $.each(Modals, function (indice, valor) {
-  if (valor.style.display == "block") {
-   modal = valor;
-  }
- });
  var Data = new Object();
  var verificacion = true;
  $.each(data, function (index, valor) {
@@ -111,34 +99,15 @@ function serializar(data) {
   if (value != "" && value != "0") {
    Data[valor.name] = value;
   } else {
-   if (primerInput) {
-    primerInput = false;
-    $(modal).find("#" + valor.name).focus();
-   }
-   var input = $(modal).find("#" + valor.name)[0];
-   if ($(input).hasClass("required")) {
-    var div = $(input).closest(".form-group");
-    var asterisco = $(div).find("font");
-    var label = $(div).find("label")[0];
-    var span = $(input).closest("div").find("span")[0];
-    asterisco[0].color = "red";
-    var txtlabel = label.innerText;
-    //var span = input.offsetParent.children[1];
-    var txtRequired = $(input).data("val-required")
-    span.innerText = txtRequired == undefined ? 'El campo ' + txtlabel.replace("*", "") + ' es requerido' : txtRequired;
-    $(input).addClass("error");
-    $(span).addClass("text-danger");
-    verificacion = false;
-    if (input.type == "select-one") {
-     primerInput = true;
-    }
-   }
+      verificacion = false;
   }
  });
  if (verificacion) {
   return Data;
  } else {
-  $(modal).data('open', true);
+     $(modal).data('open', true);
+     $("input").focusout();
+     $("select").focusout();
   return null;
  }
 }
