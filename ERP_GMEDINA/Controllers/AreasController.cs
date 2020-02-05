@@ -198,8 +198,8 @@ namespace ERP_GMEDINA.Controllers
                 {
                     var cargo = db.UDP_RRHH_tbCargos_Insert(
                         tbAreas.car_Descripcion,
-                        tbAreas.car_SalarioMinimo,
-                        tbAreas.car_SalarioMaximo,
+                        tbAreas.car_SueldoMinimo,
+                        tbAreas.car_SueldoMaximo,
                         Usuario.usu_Id,
                         DateTime.Now
                         );
@@ -372,8 +372,8 @@ namespace ERP_GMEDINA.Controllers
                         {
                             var deptocargo = db.UDP_RRHH_tbCargos_Insert(
                                                                item.car_Descripcion,
-                                                               item.car_SalarioMinimo,
-                                                               item.car_SalarioMaximo,
+                                                               item.car_SueldoMinimo,
+                                                               item.car_SueldoMaximo,
                                                                Usuario.usu_Id,
                                                                DateTime.Now
                                                              );

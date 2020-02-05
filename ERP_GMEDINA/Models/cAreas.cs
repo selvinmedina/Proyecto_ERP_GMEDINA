@@ -10,8 +10,8 @@ namespace ERP_GMEDINA.Models
     public partial class tbAreas
     {
         public string car_Descripcion { get; set; }
-        public decimal car_SalarioMinimo { get; set; }
-        public Nullable<decimal> car_SalarioMaximo { get; set; }
+        public decimal car_SueldoMinimo { get; set; }
+        public Nullable<decimal> car_SueldoMaximo { get; set; }
     }
     public class cAreas
     {
@@ -42,9 +42,9 @@ namespace ERP_GMEDINA.Models
         public string car_Descripcion { get; set; }
         [Display(Name = "Salario minimo")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "El campo \"{0}\" es requerido.")]
-        public decimal car_SalarioMinimo { get; set; }
+        public decimal car_SueldoMinimo { get; set; }
         [Display(Name = "Salario maximo")]
         [Required(AllowEmptyStrings = false, ErrorMessage = "El campo \"{0}\" es requerido.")]
-        public Nullable<decimal> car_SalarioMaximo { get; set; }
+        public Nullable<decimal> car_SueldoMaximo { get; set; }
     }
 }
