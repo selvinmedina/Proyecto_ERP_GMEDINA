@@ -897,6 +897,12 @@ function ValidarEditarDeduccionIndividual(Motivo, IdEmp, Monto, NumeroCuotas, Mo
         //FORMATEAR A DECIMAL
         MontoFormateadoMontoCuota = parseFloat(MontoFormateadoMontoCuota);
 
+        let checked = $('#Editar #dei_PagaSiempre').prop('checked');
+        if (checked == true) {
+            MontoFormateado = 0.00;
+            dei_NumeroCuotas = 0;
+        }
+
         if (ValidarEditarDeduccionIndividual(dei_Motivo, emp_Id, MontoFormateado, dei_NumeroCuotas, MontoFormateadoMontoCuota)) {
             $("#EditarDeduccionesIndividuales").modal('hide');
             $("#EditarDeduccionesIndividualesConfirmacion").modal({ backdrop: 'static', keyboard: false });
@@ -920,6 +926,7 @@ function ValidarEditarDeduccionIndividual(Motivo, IdEmp, Monto, NumeroCuotas, Mo
         var dei_MontoCuota = $("#Editar #dei_MontoCuota").val();
         var dei_PagaSiempre = $("#Editar #dei_PagaSiempre").val();
         var dei_DeducirISR = $("#Editar #dei_DeducirISR").val();
+        debugger;
         //CONVERTIR EN ARRAY EL MONTO A PARTIR DEL SEPARADOR DE MILLARES
         var indices = $("#Editar #dei_Monto").val().split(",");
         //VARIABLE CONTENEDORA DEL MONTO
@@ -964,9 +971,9 @@ function ValidarEditarDeduccionIndividual(Motivo, IdEmp, Monto, NumeroCuotas, Mo
             MontoFormateado = 0.00;
             dei_NumeroCuotas = 0;
         }
-
+        
         var data = { dei_IdDeduccionesIndividuales: dei_IdDeduccionesIndividuales, dei_Motivo: dei_Motivo, emp_Id: emp_Id, dei_Monto: MontoFormateado, dei_NumeroCuotas: dei_NumeroCuotas, dei_MontoCuota: MontoFormateadoMontoCuota, dei_PagaSiempre: dei_PagaSiempre, dei_DeducirISR: dei_DeducirISR };
-
+        debugger;
         //SE ENVIA EL JSON AL SERVIDOR PARA EJECUTAR LA EDICIÓN
         $.ajax({
             url: "/DeduccionesIndividuales/Edit",
