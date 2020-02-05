@@ -66,7 +66,7 @@ namespace ERP_GMEDINA.Controllers
                 empr_Id = 0,
                 empr_Nombre = "**Seleccione una opción**"
             });
-            Empresas.AddRange(db.tbEmpresas
+            Empresas.AddRange(db.tbEmpresas.OrderBy(d => d.empr_Nombre)
                     .Select(tabla => new { empr_Id = tabla.empr_Id, empr_Nombre = tabla.empr_Nombre })
                     .ToList());
             ViewBag.empr_Id = new SelectList(Empresas, "empr_Id", "empr_Nombre");
