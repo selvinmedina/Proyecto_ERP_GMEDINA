@@ -62,7 +62,17 @@ function CierraPopups() {
   $('.modal-backdrop').remove();//eliminamos el backdrop del modal
  });
 }
+$(".check-box").on('change', function () {
+    if ($(this).is(':checked')) {
+        $(this).attr('value', 'true');
+    } else {
+        $(this).attr('value', 'false');
+    }
+    //$(document).on('ready', function () {
+    //    $(".check-box").attr('value', 'false');
+});
 $(document).on('ready', function () {
+    $(".check-box").attr('value', 'false');
  var modal = $('.modal');
 });
 $(".modal").on("load", function () {
