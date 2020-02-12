@@ -222,7 +222,7 @@ function ValidarCampos(empId, Aporte, AFP) {
             }
     }
     if (empId != "-1") {
-        if (empId == null || emp_Id == "") {
+        if (empId == null || emp_Id == "" || empId == 0) {
             estabueno = false;
             $("#Crear #validatione1d, #Editar #e_validatione1d").css("display", "");
             $("#Crear #Asterisco1, #Editar #e_Asterisco1").css("color", "red");
@@ -331,6 +331,10 @@ $('#btnCreateRegistroDeduccionAFP').click(function () {
                 document.getElementById("btnCreateRegistroDeduccionAFP").disabled = true;
             }
         });
+    }
+    else {
+        document.getElementById("btnCreateRegistroDeduccionAFP").disabled = false;
+        ValidarCampos(empId, Aporte, AFP);
     }
 });
 // Evitar PostBack en los Formularios de las Vistas Parciales de Modal
