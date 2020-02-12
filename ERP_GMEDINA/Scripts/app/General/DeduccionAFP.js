@@ -189,6 +189,7 @@ $(document).on("click", "#btnAgregarDeduccionAFP", function () {
         $("#dafp_AporteLps").val('');
         $("#Crear #afp_Id").val("0");
         $('#Crear #dafp_DeducirISR').prop('checked', false);
+        document.getElementById("btnCreateRegistroDeduccionAFP").disabled = false;
     }
    
 });
@@ -269,6 +270,8 @@ function OcultarValidacionesEdit() {
 
 //FUNCION: CREAR EL NUEVO REGISTRO
 $('#btnCreateRegistroDeduccionAFP').click(function () {
+    document.getElementById("btnCreateRegistroDeduccionAFP").disabled = true;
+
     var empId = $("#Crear #emp_IdCrear").val();
     var Aporte = $("#Crear #dafp_AporteLps").val();
     var AFP = $("#Crear #afp_Id").val();
@@ -308,8 +311,7 @@ $('#btnCreateRegistroDeduccionAFP').click(function () {
 
                 //CERRAR EL MODAL DE AGREGAR
                 $("#AgregarDeduccionAFP").modal('hide');
-                document.getElementById("btnCreateRegistroDeduccionAFP").disabled = false;
-
+                
                 // Mensaje de exito cuando un registro se ha guardado bien
                 iziToast.success({
                     title: 'Éxito',
@@ -326,6 +328,7 @@ $('#btnCreateRegistroDeduccionAFP').click(function () {
                     title: 'Error',
                     message: 'No se guardó el registro, contacte al administrador',
                 });
+                document.getElementById("btnCreateRegistroDeduccionAFP").disabled = true;
             }
         });
     }
@@ -564,8 +567,7 @@ $(document).on("click", "#tblDeduccionAFP tbody tr td #btnDetalleDeduccionAFP", 
                     var FechaCrea = FechaFormato(data[0].dafp_FechaCrea);
                     var FechaModifica = FechaFormato(data[0].dafp_FechaModifica);
                     $("#Detalles #dafp_Id").html(data[0].dafp_Id);
-                    $("#Detalles #emp_Id").html(data[0].emp_Id);
-                    $("#Detalles #per_Nombres + #per_Apellidos").html(data[0].per_Nombres + data[0].per_Apellidos);
+                    $("#Detalles #emp_Id").html(data[0].per_Nombres + ' ' + data[0].per_Apellidos);
                     $("#Detalles #emp_CuentaBancaria").html(data[0].emp_CuentaBancaria);
                     $("#Detalles #dafp_AporteLps").html(data[0].dafp_AporteLps);
                     $("#Detalles #afp_Id").html(data[0].afp_Id);
