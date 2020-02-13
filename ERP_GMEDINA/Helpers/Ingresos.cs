@@ -642,7 +642,7 @@ namespace ERP_GMEDINA.Helpers
             // salario por hora
             try
             {
-                salarioHora = Math.Round(SalarioBase / 240);
+                salarioHora = Math.Round(SalarioBase / 240, 2);
             }
             catch (Exception ex)
             {

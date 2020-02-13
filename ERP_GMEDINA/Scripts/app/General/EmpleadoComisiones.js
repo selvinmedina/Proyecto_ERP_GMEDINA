@@ -49,7 +49,7 @@ function cargarGridComisiones() {
                 var botonEditar = ListaComisiones[i].cc_Activo == true ? '<button data-id = "' + ListaComisiones[i].cc_Id + '" type="button" style="margin rigth:3px;" class="btn btn-default btn-xs"  id="btnEditarEmpleadoComisiones">Editar</button>' : '';
 
                 //variable donde está el boton activar
-                var botonActivar = ListaComisiones[i].cc_Activo == false ? esAdministrador == "1" ? '<button data-id = "' + ListaComisiones[i].cc_Id + '" type="button" style="margin rigth:3px;" class="btn btn-default btn-xs"  id="btnActivarRegistroComisiones">Activar</button>' : '' : '';
+                var botonActivar = ListaComisiones[i].cc_Activo == false ? esAdministrador == "1" ? '<button data-id = "' + ListaComisiones[i].cc_Id + '" type="button" style="margin right:3px;" class="btn btn-default btn-xs"  id="btnActivarRegistroComisiones">Activar</button>' : '' : '';
 
                 var FechaRegistro = FechaFormato(ListaComisiones[i].cc_FechaRegistro);
 
@@ -156,7 +156,8 @@ $('#btnCreateRegistroComisiones').click(function () {
 
     if (ValidarCamposCrear(Empleado, Ingreso, Total)) {
 
-        //BLOQUEAR EL BOTON DE CREAR        $("#btnCreateRegistroComisiones").attr("disabled", true);
+        //BLOQUEAR EL BOTON DE CREAR       
+        $("#btnCreateRegistroComisiones").attr("disabled", true);
         //CONVERTIR EN ARRAY EL TOTAL A PARTIR DEL SEPARADOR DE MILLARES
         var indicest = $("#Crear #TotalVenta").val().split(",");
         //VARIABLE CONTENEDORA DEL TOTAL
@@ -193,7 +194,7 @@ $('#btnCreateRegistroComisiones').click(function () {
                     });
                 }
                 else {
-                    //REFRESCAR LA DATA DEL DATATABLE
+                    //REFRESCAR LA DATA DEL DATATABLE                    
                     cargarGridComisiones();
                     //OCULTAR MODAL DE CREACION
                     $("#AgregarEmpleadoComisiones").modal('hide');
