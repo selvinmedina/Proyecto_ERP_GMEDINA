@@ -26,6 +26,32 @@ namespace ERP_GMEDINA.Controllers
         }
         #endregion
 
+        #region GetMonedas
+
+        public ActionResult getMonedas()
+        {
+            var objMonedas = db.tbTipoMonedas
+                        .Where(c=>c.tmon_Estado == true)
+                        .Select(c => new { tmon_Id = c.tmon_Id, tmon_Descripcion = c.tmon_Descripcion })
+                        .ToList();
+
+            // retornar información
+            return new JsonResult { Data = objMonedas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+
+        public ActionResult getMonedasPlanilla(int? cpla_IdPlanilla)
+        {
+            var objMonedas = (from empleados in db.tbEmpleados
+                              join sueldo in db.tbSueldos on empleados.emp_Id equals sueldo.emp_Id
+                              join monedas in db.tbTipoMonedas on sueldo.tmon_Id equals monedas.tmon_Id
+                              where cpla_IdPlanilla == null ? "1" == "1" : empleados.cpla_IdPlanilla == cpla_IdPlanilla
+                              select new { tmon_Id = monedas.tmon_Id, tmon_Descripcion = monedas.tmon_Descripcion }
+                                ).Distinct();
+
+            return new JsonResult { Data = objMonedas, JsonRequestBehavior = JsonRequestBehavior.AllowGet };
+        }
+        #endregion
+
         #region GET: GetPlanilla
         // cargar en el datatable una planilla en específico
         public ActionResult GetPlanilla(int? ID)
@@ -41,8 +67,8 @@ namespace ERP_GMEDINA.Controllers
         #endregion
 
         #region GenerarPlanilla
-        [SessionManager("Planilla/GenerarPlanilla")]
-        public async Task<ActionResult> GenerarPlanilla(int? ID, bool? enviarEmail, DateTime fechaInicio, DateTime fechaFin)
+        [SessionManager("Planilla/Index")]
+        public async Task<ActionResult> GenerarPlanilla(int? ID, bool? enviarEmail, DateTime fechaInicio, DateTime fechaFin, List<ViewModelTasasDeCambio> monedas, int tmon_IdMonedaDeduccionesDePlanilla)
         {
             #region declaracion de instancias
 
@@ -161,6 +187,7 @@ namespace ERP_GMEDINA.Controllers
 
                                             oPlanillaEmpleado = new ReportePlanillaViewModel();
                                             oError = new ViewModelListaErrores();
+                                            string moneda = db.tbSueldos.Where(x => x.emp_Id == empleadoActual.emp_Id).Select(x => x.tbTipoMonedas.tmon_Descripcion).FirstOrDefault();
 
                                             // variables para insertar en los historiales de pago
                                             IEnumerable<object> listHistorialPago = null;
@@ -201,7 +228,9 @@ namespace ERP_GMEDINA.Controllers
                                                    out resultSeptimoDia));
 
                                             //Procesar Deducciones
-                                            await Task.Run(() => Deducciones.ProcesarDeducciones(userId,fechaInicio,
+                                            await Task.Run(() => Deducciones.ProcesarDeducciones(tmon_IdMonedaDeduccionesDePlanilla,
+                                                 monedas,
+                                                 userId,fechaInicio,
                                                  fechaFin,
                                                  ListaDeduccionesVoucher,
                                                  listaErrores,
@@ -279,7 +308,8 @@ namespace ERP_GMEDINA.Controllers
                                                   InformacionDelEmpleadoActual));
 
                                             #region crear registro de la planilla del colaborador para el reporte
-                                            await Task.Run(() => ReportePlanilla.ReporteColaboradorPlanilla(ref oPlanillaEmpleado,
+                                            await Task.Run(() => ReportePlanilla.ReporteColaboradorPlanilla(moneda, 
+                                                   ref oPlanillaEmpleado,
                                                    empleadoActual,
                                                    SalarioBase,
                                                    horasTrabajadas,
@@ -379,7 +409,7 @@ namespace ERP_GMEDINA.Controllers
 
         #region previsualizar
         [SessionManager("Planilla/Index")]
-        public ActionResult PrevisualizarPlanilla(int? ID, bool? enviarEmail, DateTime fechaInicio, DateTime fechaFin)
+        public ActionResult PrevisualizarPlanilla(int? ID, bool? enviarEmail, DateTime fechaInicio, DateTime fechaFin, List<ViewModelTasasDeCambio> monedas, int tmon_IdMonedaDeduccionesDePlanilla)
         {
             #region declaracion de instancias
 
@@ -447,7 +477,7 @@ namespace ERP_GMEDINA.Controllers
                                 {
                                     try
                                     {
-                                        #region RESPALDO POR SI LO ARRUINO 
+                                        #region inicia proceso de previsualización
 
                                         #region variables reporte view model
 
@@ -482,15 +512,17 @@ namespace ERP_GMEDINA.Controllers
                                             netoAPagarColaborador = 0;
 
                                         oPlanillaEmpleado = new ReportePlanillaViewModel();
-
+                                        string moneda = db.tbSueldos.Where(x => x.emp_Id == empleadoActual.emp_Id).Select(x => x.tbTipoMonedas.tmon_Descripcion).FirstOrDefault();
 
                                         #endregion
 
                                         V_InformacionColaborador InformacionDelEmpleadoActual;
                                         decimal resultSeptimoDia = 0;
+                                        int userId = (int)Session["UserLogin"];
 
                                         // procesa ingresos
-                                        Ingresos.PrevisualizarProcesarIngresos(fechaInicio,
+                                        Ingresos.PrevisualizarProcesarIngresos(userId,
+                                               fechaInicio,
                                                fechaFin,
                                                listaErrores,
                                                ref errores,
@@ -513,7 +545,10 @@ namespace ERP_GMEDINA.Controllers
                                                out resultSeptimoDia);
 
                                         // procesar deducciones
-                                        Deducciones.PrevisualizarProcesarDeducciones(fechaInicio,
+                                        Deducciones.PrevisualizarProcesarDeducciones(tmon_IdMonedaDeduccionesDePlanilla,
+                                             monedas,
+                                             userId, 
+                                             fechaInicio,
                                              fechaFin,
                                              listaErrores,
                                              ref errores,
@@ -541,7 +576,7 @@ namespace ERP_GMEDINA.Controllers
                                         #region crear registro de la planilla del colaborador para el reporte
 
                                         // reporte
-                                        ReportePlanilla.ReportePlanillaPrevisualizacion(ref oPlanillaEmpleado, empleadoActual, SalarioBase, horasTrabajadas, salarioHora, totalSalario, totalComisiones, horasExtrasTrabajadas, totalHorasExtras, totalHorasPermiso, totalBonificaciones, totalIngresosIndivuales, totalVacaciones, totalIngresosEmpleado, totalISR, colaboradorDeducciones, totalAFP, totalInstitucionesFinancieras, totalOtrasDeducciones, adelantosSueldo, totalDeduccionesEmpleado, totalDeduccionesIndividuales, netoAPagarColaborador, InformacionDelEmpleadoActual);
+                                        ReportePlanilla.ReportePlanillaPrevisualizacion(moneda,ref oPlanillaEmpleado, empleadoActual, SalarioBase, horasTrabajadas, salarioHora, totalSalario, totalComisiones, horasExtrasTrabajadas, totalHorasExtras, totalHorasPermiso, totalBonificaciones, totalIngresosIndivuales, totalVacaciones, totalIngresosEmpleado, totalISR, colaboradorDeducciones, totalAFP, totalInstitucionesFinancieras, totalOtrasDeducciones, adelantosSueldo, totalDeduccionesEmpleado, totalDeduccionesIndividuales, netoAPagarColaborador, InformacionDelEmpleadoActual);
                                         reporte.Add(oPlanillaEmpleado);
                                         oPlanillaEmpleado = null;
                                         #endregion
