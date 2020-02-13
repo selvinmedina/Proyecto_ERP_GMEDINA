@@ -188,7 +188,7 @@ namespace ERP_GMEDINA.Controllers
 
                                             oPlanillaEmpleado = new ReportePlanillaViewModel();
                                             oError = new ViewModelListaErrores();
-                                            string moneda = db.tbSueldos.Where(x => x.emp_Id == empleadoActual.emp_Id).Select(x => x.tbTipoMonedas.tmon_Descripcion).FirstOrDefault();
+                                            string moneda = db.tbSueldos.Where(x => x.emp_Id == empleadoActual.emp_Id && x.sue_Estado == true).Select(x => x.tbTipoMonedas.tmon_Descripcion).FirstOrDefault();
 
                                             // variables para insertar en los historiales de pago
                                             IEnumerable<object> listHistorialPago = null;
@@ -292,7 +292,8 @@ namespace ERP_GMEDINA.Controllers
                                             dbContextTransaccion.Commit();
 
                                             //EnviarComprobanteDePago
-                                            await Task.Run(() => EnviarComprobanteDePago.EnviarComprobanteDePagoColaborador(enviarEmail,
+                                            await Task.Run(() => EnviarComprobanteDePago.EnviarComprobanteDePagoColaborador(moneda,
+                                                  enviarEmail,
                                                   fechaInicio,
                                                   fechaFin,
                                                   utilities,
