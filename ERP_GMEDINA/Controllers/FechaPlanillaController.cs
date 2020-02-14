@@ -42,16 +42,16 @@ namespace ERP_GMEDINA.Controllers
         }
 
         [HttpGet]
-        public JsonResult getFechaPlanilla()
-        {
-            var oV_Plani_FechaPlani = db.V_Plani_AnioPlanilla
-            .Select(x => new FechaPlanilla { Anio = x.hipa_Anio }).ToList();
+        //public JsonResult getFechaPlanilla()
+        //{
+        //    var oV_Plani_FechaPlani = db.V_Plani_AnioPlanilla
+        //    .Select(x => new FechaPlanilla { Anio = x.hipa_Anio }).ToList();
 
 
-            object json = new { data = oV_Plani_FechaPlani };
+        //    object json = new { data = oV_Plani_FechaPlani };
 
-            return Json(json, JsonRequestBehavior.AllowGet);
-        }
+        //    return Json(json, JsonRequestBehavior.AllowGet);
+        //}
 
         [HttpPost]
         public JsonResult getTipoPlanilla(int anio)

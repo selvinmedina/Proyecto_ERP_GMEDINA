@@ -12,6 +12,7 @@ using SimpleCrypto;
 using System.Transactions;
 using Microsoft.Owin.Security;
 using ERP_GMEDINA.Attribute;
+using ERP_GMEDINA.Helpers;
 
 namespace ERP_GMEDINA.Controllers
 {
@@ -19,7 +20,7 @@ namespace ERP_GMEDINA.Controllers
     {
         private ERP_GMEDINAEntities db = new ERP_GMEDINAEntities();
         Models.Helpers Function = new Models.Helpers();
-        Helpers Help = new Helpers();
+        Models.Helpers Help = new Models.Helpers();
         // GET: /Usuario/
         [SessionManager("Usuario/Index")]
         public ActionResult Index()
@@ -249,7 +250,7 @@ namespace ERP_GMEDINA.Controllers
                     IEnumerable<object> List = null;
                     var MsjError = "0";
                     List = db.UDP_Acce_tbUsuario_Update(tbUsuario.usu_Id, tbUsuario.usu_NombreUsuario, tbUsuario.usu_Nombres, tbUsuario.usu_Apellidos, tbUsuario.usu_Correo, usu_EsActivo, tbUsuario.usu_RazonInactivo, tbUsuario.usu_EsAdministrador,
-                        tbUsuario.suc_Id, tbUsuario.emp_Id);
+                        tbUsuario.suc_Id, (short)tbUsuario.emp_Id);
                     foreach (UDP_Acce_tbUsuario_Update_Result Usuario in List)
                         MsjError = Usuario.MensajeError;
 
@@ -311,7 +312,7 @@ namespace ERP_GMEDINA.Controllers
                     IEnumerable<object> List = null;
                     var MsjError = "0";
                     List = db.UDP_Acce_tbUsuario_Update(tbUsuario.usu_Id, tbUsuario.usu_NombreUsuario, tbUsuario.usu_Nombres, tbUsuario.usu_Apellidos, tbUsuario.usu_Correo, usu_EsActivo, tbUsuario.usu_RazonInactivo, tbUsuario.usu_EsAdministrador,
-                        tbUsuario.suc_Id, tbUsuario.emp_Id);
+                        tbUsuario.suc_Id, (short)tbUsuario.emp_Id);
                     foreach (UDP_Acce_tbUsuario_Update_Result Usuario in List)
                         MsjError = Usuario.MensajeError;
 

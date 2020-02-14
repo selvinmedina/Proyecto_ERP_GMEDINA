@@ -248,7 +248,171 @@ namespace ERP_GMEDINA.Models
             return dt;
         }
 
+        //Facturacion
+        public List<Genero> GeneroList()
+        {
+            List<Genero> list = new List<Genero>();
+
+            list.Add(new Genero()
+            {
+                ID_GENERO = "H",
+                DESCRIPCION = "Hombre"
+            });
+            list.Add(new Genero()
+            {
+                ID_GENERO = "M",
+                DESCRIPCION = "Mujer"
+            });
+            return list;
+        }
+
+        public List<Nacionalidad> NacionalidadList()
+        {
+            List<Nacionalidad> list = new List<Nacionalidad>();
+
+            list.Add(new Nacionalidad()
+            {
+                DESCRIPCION = "Hondureña",
+            });
+            list.Add(new Nacionalidad()
+            {
+                DESCRIPCION = "Mexicano",
+            });
+            list.Add(new Nacionalidad()
+            {
+                DESCRIPCION = "EstadoUnidense"
+            });
+            return list;
+        }
+
+        public List<cDepartamento> DepartamentoList()
+        {
+            List<cDepartamento> list = new List<cDepartamento>();
+
+            list.Add(new cDepartamento()
+            {
+                DESCRIPCION = "Olancho",
+            });
+            list.Add(new cDepartamento()
+            {
+                DESCRIPCION = "Atlántida",
+            });
+            list.Add(new cDepartamento()
+            {
+                DESCRIPCION = "La Ceiba"
+            });
+            list.Add(new cDepartamento()
+            {
+                DESCRIPCION = "Choluteca"
+            });
+            list.Add(new cDepartamento()
+            {
+                DESCRIPCION = "Cortes"
+            });
+
+            return list;
+        }
+
+        public List<DenominacionList> DenominacionList()
+        {
+            List<DenominacionList> list = new List<DenominacionList>();
+
+            list.Add(new DenominacionList()
+            {
+                ID_TipoDenominacion = 1,
+                Tipo_Denominacion = "Billete"
+            });
+            list.Add(new DenominacionList()
+            {
+                ID_TipoDenominacion = 2,
+                Tipo_Denominacion = "Moneda"
+            });
+
+
+            return list;
+        }
+
+        public bool EsPersonaNatural(int clte_Id)
+        {
+            bool Retorno = false;
+            try
+            {
+                var Cliente = (from vCliente in db.tbCliente where vCliente.clte_Id == clte_Id select vCliente.clte_EsPersonaNatural).FirstOrDefault();
+                if (Cliente)
+                {
+                    Retorno = true;
+                }
+                else
+                {
+                    Retorno = false;
+                }
+            }
+            catch (Exception Ex)
+            {
+                Ex.Message.ToString();
+                Retorno = false;
+            }
+            return Retorno;
+        }
+
+        public List<cMinorista> MinoristaList()
+        {
+            List<cMinorista> list = new List<cMinorista>();
+
+            list.Add(new cMinorista()
+            {
+                ID_MINORISTA = "1",
+                DESCRIPCION = "Si"
+            });
+            list.Add(new cMinorista()
+            {
+                ID_MINORISTA = "0",
+                DESCRIPCION = "No"
+            });
+            return list;
+        }
+
+        public List<cActivo> EstadoList()
+        {
+            List<cActivo> list = new List<cActivo>();
+
+            list.Add(new cActivo()
+            {
+                ID_ACTIVO = "1",
+                DESCRIPCION = "Si"
+            });
+            list.Add(new cActivo()
+            {
+                ID_ACTIVO = "0",
+                DESCRIPCION = "No"
+            });
+            return list;
+        }
+
+        public List<cTipoCuenta> TipoCuentaList()
+        {
+            List<cTipoCuenta> list = new List<cTipoCuenta>();
+
+            list.Add(new cTipoCuenta()
+            {
+                ID_TIPOCUENTA = 1,
+                DESCRIPCION = "Ahorro"
+            });
+            list.Add(new cTipoCuenta()
+            {
+                ID_TIPOCUENTA = 0,
+                DESCRIPCION = "Cheques"
+            });
+            return list;
+        }
+
+
+
+
+        public const int rptVentasFechas = 195;
         public const bool AnuladoFactura = true;
+        public const bool EsImpreso = true;
+        public const int EstadoImpreso = 2;
         public const int RTN = 3;
         public const int ID = 2;
 
@@ -281,6 +445,19 @@ namespace ERP_GMEDINA.Models
         public const int EntradaEmitida = 2;
         public const int EntradaInactivada = 4;
         public const int EntradaAplicada = 1;
+
+        //Estados Exoneración 
+        public const bool ExoneracionActiva = true;
+        public const bool ExoneracionInactiva = false;
+
+        //Reportes
+        public const int rptVentasCajaFechas = 196;
+        public const int rptFacturasPendientesPago = 197;
+        public const int rptVentasConsumidorFinal = 198;
+        public const int rptNotasCreditoEntreFechas = 199;
+        public const int rptAnalisisMora = 200;
+        public const int rptSolicitudesCreditoAprobar = 202;
+        public const int rptCuponesDescuentoFechas = 205;
 
         //estado movimiento
         public const int EntradaEstadoAnulada = 3;

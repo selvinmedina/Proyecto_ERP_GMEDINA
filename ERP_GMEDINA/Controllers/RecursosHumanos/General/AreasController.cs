@@ -8,7 +8,6 @@ using System.Web;
 using System.Web.Mvc;
 using ERP_GMEDINA.Attribute;
 using ERP_GMEDINA.Models;
-using ERP_GMEDINA.Attribute;
 
 namespace ERP_GMEDINA.Controllers
 {

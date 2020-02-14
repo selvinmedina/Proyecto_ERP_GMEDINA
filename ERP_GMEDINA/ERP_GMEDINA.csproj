@@ -45,9 +45,18 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.CrystalReports.Engine.1.0.0\lib\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.ReportSource.1.0.0\lib\CrystalDecisions.ReportSource.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.2000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL">
+      <HintPath>..\packages\CrystalDecisions.Shared.1.0.0\lib\CrystalDecisions.Shared.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.5.5631.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\DocumentFormat.OpenXml.2.5\lib\DocumentFormat.OpenXml.dll</HintPath>
       <Private>True</Private>
@@ -158,6 +167,10 @@
       <HintPath>..\packages\Rotativa.1.7.4-rc\lib\net45\Rotativa.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="SimpleCrypto, Version=26.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\SimpleCrypto.0.3.30.26\lib\SimpleCrypto.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="SpreadsheetLight, Version=3.4.11.0, Culture=neutral, PublicKeyToken=32fbb46dc1730c57, processorArchitecture=MSIL">
       <HintPath>..\packages\SpreadsheetLight.3.4.11\lib\net40\SpreadsheetLight.dll</HintPath>
       <Private>True</Private>
@@ -239,34 +252,6 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Attribute\SessionManager.cs" />
-    <Compile Include="Controllers\Facturacion\Caja\DenominacionArqueoController.cs" />
-    <Compile Include="Controllers\Facturacion\Caja\DenominacionController.cs" />
-    <Compile Include="Controllers\Facturacion\Caja\MovimientoCajaController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\ActividadEconomicaController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\BancoController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\CuentaBancoController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\DocumentoFiscalController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\EstadoFacturaController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\EstadoPedidoController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\EstadoSolicitudCreditoController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\MonedaController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\TipoIdentificacionController.cs" />
-    <Compile Include="Controllers\Facturacion\Catalogos\TipoPagoController.cs" />
-    <Compile Include="Controllers\Facturacion\Configuracion\CajaController.cs" />
-    <Compile Include="Controllers\Facturacion\Configuracion\PuntoEmisionController.cs" />
-    <Compile Include="Controllers\Facturacion\Configuracion\SucursalController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\ClienteController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\CuponDescuentoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\DevolucionController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\ExoneracionController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\FacturaController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\ListaPreciosController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\NotaCreditoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\PagoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\PagosArqueoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\PedidoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\SolicitudCreditoController.cs" />
-    <Compile Include="Controllers\Facturacion\Ventas\SolicitudEfectivoController.cs" />
     <Compile Include="Controllers\Inventario\Catalogos\DepartamentoController.cs" />
     <Compile Include="Controllers\Inventario\Catalogos\EstadoInventarioFisicoController.cs" />
     <Compile Include="Controllers\Inventario\Catalogos\EstadoMovimientoController.cs" />
@@ -357,7 +342,9 @@
     <Compile Include="Controllers\RecursosHumanos\FinalizacionLaboral\TipoSalidasController.cs" />
     <Compile Include="Controllers\RecursosHumanos\DatosProfesionales\TitulosController.cs" />
     <Compile Include="Controllers\ReportesController.cs" />
-    <Compile Include="Controllers\UsuarioController.cs" />
+    <Compile Include="Controllers\Seguridad\ObjetoController.cs" />
+    <Compile Include="Controllers\Seguridad\RolController.cs" />
+    <Compile Include="Controllers\Seguridad\UsuarioController.cs" />
     <Compile Include="DataSets\ReportesPlanillaDS.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -376,6 +363,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Helpers\CalculoISR.cs" />
     <Compile Include="Helpers\Deducciones.cs" />
     <Compile Include="Helpers\EnviarComprobanteDePago.cs" />
     <Compile Include="Helpers\General.cs" />
@@ -454,9 +442,6 @@
     <Compile Include="Models\Inventario\Catalogo\estadomovimientos.cs" />
     <Compile Include="Models\Inventario\Catalogo\Estados.cs" />
     <Compile Include="Models\Inventario\Catalogo\EstadoSubCategoria.cs" />
-    <Compile Include="Models\Inventario\Catalogo\InventariosFisicos.cs" />
-    <Compile Include="Models\Inventario\Catalogo\InventariosFisicosDetalle.cs" />
-    <Compile Include="Models\Inventario\Catalogo\ModelERP.Context.cs" />
     <Compile Include="Models\Inventario\Catalogo\municipios.cs" />
     <Compile Include="Models\Inventario\Catalogo\Productos.cs" />
     <Compile Include="Models\Inventario\Catalogo\ProductosCategorias.cs" />
@@ -763,7 +748,6 @@
     <Compile Include="Models\Seguridad\Objeto.cs" />
     <Compile Include="Models\Seguridad\rol.cs" />
     <Compile Include="Models\Seguridad\RolesUsuario.cs" />
-    <Compile Include="Models\Seguridad\Usuario.cs" />
     <Compile Include="Models\spGetActividadEconomica_Result.cs">
       <DependentUpon>ERP_GMEDINA.tt</DependentUpon>
     </Compile>
@@ -2967,52 +2951,136 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Reports\AnalisisDeMora.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ArqueoCaja.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\CatalogoProducto.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>CatalogoProducto.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\CuponDescuento.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DescuentosPorFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\DevolucionesPorFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\EstadoCuenta.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Factura.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\FacturasPendienteDePago.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ImprimirConciliacion.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ImprimirConciliacion.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\ImprimirCuponDescuento.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ImprimirEntradaPorId.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ImprimirEntradaPorId.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\ImprimirNotaCreditoclteJuridicoxDEV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ImprimirNotaCreditoclteJuridicoxOtros.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ImprimirNotaCreditoclteNaturalxDEV.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\ImprimirNotaCreditoclteNaturalxOtros.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ImprimirPackingList.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ImprimirPackingList.rpt</DependentUpon>
       <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
     </Compile>
     <Compile Include="Reports\ImprimirPackingListPorCaja.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ImprimirPackingListPorCaja.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\ListadoPrecio2.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Movimiento_Entre_Fechas.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Movimiento_Entre_Fechas.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\NotaCredito.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PagoImprimir1.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\PagosPorFecha.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Pedidos.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\ReporteTipoEntrada.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>ReporteTipoEntrada.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\rptInventarioNumeraciones.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptPedidoEntreFechas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSolicitudEfectivoEntreFechasCajaCajero.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptSolicitudEfectivoEntrefechasGeneral.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptVentasExoneradas.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\rptVentasPorCajaEntreFecha.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Reports\Salida.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
       <DependentUpon>Salida.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="Reports\SolicitudEfectivo.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\SolicitudesCreditosPorAprobar.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\VentasConsumidorFinal.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Ventas_entre_Fechas.cs">
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Startup.cs" />
@@ -3450,6 +3518,34 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <Content Include="Reports\AnalisisDeMora.rpt" />
+    <Content Include="Reports\ArqueoCaja.rpt" />
+    <Content Include="Reports\CuponDescuento.rpt" />
+    <Content Include="Reports\DescuentosPorFecha.rpt" />
+    <Content Include="Reports\DevolucionesPorFecha.rpt" />
+    <Content Include="Reports\EstadoCuenta.rpt" />
+    <Content Include="Reports\Factura.rpt" />
+    <Content Include="Reports\FacturasPendienteDePago.rpt" />
+    <Content Include="Reports\ImprimirCuponDescuento.rpt" />
+    <Content Include="Reports\ImprimirNotaCreditoclteJuridicoxDEV.rpt" />
+    <Content Include="Reports\ImprimirNotaCreditoclteJuridicoxOtros.rpt" />
+    <Content Include="Reports\ImprimirNotaCreditoclteNaturalxDEV.rpt" />
+    <Content Include="Reports\ImprimirNotaCreditoclteNaturalxOtros.rpt" />
+    <Content Include="Reports\ListadoPrecio.rpt" />
+    <Content Include="Reports\NotaCredito.rpt" />
+    <Content Include="Reports\PagoImprimir.rpt" />
+    <Content Include="Reports\PagosPorFecha.rpt" />
+    <Content Include="Reports\Pedidos.rpt" />
+    <Content Include="Reports\rptInventarioNumeraciones.rpt" />
+    <Content Include="Reports\rptPedidoEntreFechas.rpt" />
+    <Content Include="Reports\rptSolicitudEfectivoEntreFechasCajaCajero.rpt" />
+    <Content Include="Reports\rptSolicitudEfectivoEntrefechasGeneral.rpt" />
+    <Content Include="Reports\rptVentasExoneradas.rpt" />
+    <Content Include="Reports\rptVentasPorCajaEntreFecha.rpt" />
+    <Content Include="Reports\SolicitudEfectivo.rpt" />
+    <Content Include="Reports\SolicitudesCreditosPorAprobar.rpt" />
+    <Content Include="Reports\VentasConsumidorFinal.rpt" />
+    <Content Include="Reports\Ventas_entre_Fechas.rpt" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-2.1.1.js" />
     <Content Include="Scripts\jquery-2.1.1.min.js" />
@@ -4728,7 +4824,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Controllers\Inventario\Seguridad\" />
-    <Folder Include="Controllers\Seguridad\" />
     <Folder Include="Downloadable files\" />
     <Folder Include="Expedientes\Expediente_2\Constancia\" />
     <Folder Include="fonts\font-awesome\less\" />
