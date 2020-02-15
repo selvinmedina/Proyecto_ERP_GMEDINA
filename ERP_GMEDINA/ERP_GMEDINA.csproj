@@ -3297,6 +3297,12 @@
     <Compile Include="Reports\Pedidos.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reports\ProductoSolicitadosPorEntregar.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ProductoSolicitadosPorEntregar.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Reports\ReporteTipoEntrada.cs">
       <DependentUpon>ReporteTipoEntrada.rpt</DependentUpon>
       <SubType>Component</SubType>
@@ -5067,6 +5073,10 @@
       <LastGenOutput>Movimiento_Entre_Fechas.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Reports\PermisosRPT.rdlc" />
+    <EmbeddedResource Include="Reports\ProductoSolicitadosPorEntregar.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ProductoSolicitadosPorEntregar.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reports\ReporteTipoEntrada.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteTipoEntrada.cs</LastGenOutput>

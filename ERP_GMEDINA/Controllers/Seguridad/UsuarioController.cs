@@ -156,8 +156,10 @@ namespace ERP_GMEDINA.Controllers
                 {
                     try
                     {
-                        List = db.UDP_Acce_tbUsuario_Insert(tbUsuario.usu_NombreUsuario, usu_Password, tbUsuario.usu_Nombres, tbUsuario.usu_Apellidos, tbUsuario.usu_Correo, tbUsuario.suc_Id, tbUsuario.emp_Id, tbUsuario.usu_EsAdministrador);
-                        foreach (UDP_Acce_tbUsuario_Insert_Result Usuario in List)
+                        //Linea modificada por la segunda generacion
+                        // List = db.UDP_Acce_tbUsuario_Insert(tbUsuario.usu_NombreUsuario, usu_Password, tbUsuario.usu_Nombres, tbUsuario.usu_Apellidos, tbUsuario.usu_Correo, tbUsuario.suc_Id, tbUsuario.emp_Id, tbUsuario.usu_EsAdministrador);
+                        List = db.UDP_Acce_tbUsuario_Insert(tbUsuario.usu_NombreUsuario, usu_Password, tbUsuario.usu_Nombres, tbUsuario.usu_Apellidos, tbUsuario.usu_Correo,true, tbUsuario.usu_EsAdministrador, tbUsuario.suc_Id, tbUsuario.emp_Id);
+                           foreach (UDP_Acce_tbUsuario_Insert_Result Usuario in List)
                             MsjError = Usuario.MensajeError;
 
                         EmailCreate(emailsalida, passwordsalida, emaildestino, usuario, password);
