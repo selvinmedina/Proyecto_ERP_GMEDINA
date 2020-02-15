@@ -26571,7 +26571,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
             <Parameter Name="obj_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbAccesoRol_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbAccesoRol_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbAccesoRol_Insert_Result)">
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
             <Parameter Name="obj_Id" Mode="In" Type="Int32" />
             <Parameter Name="UsuarioCrea" Mode="In" Type="Int32" />
@@ -26584,13 +26584,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="acrol_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="acrol_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbObjeto_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbObjeto_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbObjeto_Insert_Result)">
             <Parameter Name="obj_Pantalla" Mode="In" Type="String" />
             <Parameter Name="obj_Referencia" Mode="In" Type="String" />
             <Parameter Name="obj_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="obj_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbObjeto_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbObjeto_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbObjeto_Update_Result)">
             <Parameter Name="obj_Id" Mode="In" Type="Int32" />
             <Parameter Name="obj_Pantalla" Mode="In" Type="String" />
             <Parameter Name="obj_Referencia" Mode="In" Type="String" />
@@ -26599,30 +26599,30 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="obj_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="obj_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbObjeto_Update_Estado" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbObjeto_Update_Estado" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbObjeto_Update_Estado_Result)">
             <Parameter Name="obj_Id" Mode="In" Type="Int32" />
             <Parameter Name="obj_Estado" Mode="In" Type="Boolean" />
             <Parameter Name="obj_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="obj_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbRol_Inactivar" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbRol_Inactivar" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbRol_Inactivar_Result)">
             <Parameter Name="IDRol" Mode="In" Type="Int32" />
             <Parameter Name="rol_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="rol_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbRol_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbRol_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbRol_Insert_Result)">
             <Parameter Name="rol_Descripcion" Mode="In" Type="String" />
             <Parameter Name="rol_Estado" Mode="In" Type="Boolean" />
             <Parameter Name="rol_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="rol_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbRol_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbRol_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbRol_Update_Result)">
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
             <Parameter Name="rol_Descripcion" Mode="In" Type="String" />
             <Parameter Name="rol_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="rol_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbRolEstado_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbRolEstado_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbRolEstado_Update_Result)">
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
             <Parameter Name="rol_Estado" Mode="In" Type="Boolean" />
             <Parameter Name="rol_UsuarioModifica" Mode="In" Type="Int32" />
@@ -26632,7 +26632,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbRolesUsuario_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbRolesUsuario_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbRolesUsuario_Insert_Result)">
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="rol_Id" Mode="In" Type="Int32" />
             <Parameter Name="rolu_UsuarioCrea" Mode="In" Type="Int32" />
@@ -26645,12 +26645,12 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="rolu_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="rolu_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbUsuario_Estado" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbUsuario_Estado" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbUsuario_Estado_Result)">
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="usu_EsActivo" Mode="In" Type="Boolean" />
             <Parameter Name="usu_RazonInactivo" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbUsuario_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbUsuario_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbUsuario_Insert_Result)">
             <Parameter Name="usu_NombreUsuario" Mode="In" Type="String" />
             <Parameter Name="usu_Password" Mode="In" Type="String" />
             <Parameter Name="usu_Nombres" Mode="In" Type="String" />
@@ -26661,16 +26661,16 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
             <Parameter Name="emp_Id" Mode="In" Type="Int16" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbUsuario_PasswordRestore" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbUsuario_PasswordRestore" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbUsuario_PasswordRestore_Result)">
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="usu_Password" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Acce_tbUsuario_PasswordUpdate" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbUsuario_PasswordUpdate" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbUsuario_PasswordUpdate_Result)">
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="usu_Password" Mode="In" Type="String" />
           </FunctionImport>
           <FunctionImport Name="UDP_Acce_tbUsuario_Select" ReturnType="Collection(String)" />
-          <FunctionImport Name="UDP_Acce_tbUsuario_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Acce_tbUsuario_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Acce_tbUsuario_Update_Result)">
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="usu_NombreUsuario" Mode="In" Type="String" />
             <Parameter Name="usu_Nombres" Mode="In" Type="String" />
@@ -27747,13 +27747,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="CLIENTE" Mode="In" Type="Int32" />
             <Parameter Name="TIPOCLIENTE" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCaja_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCaja_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCaja_Insert_Result)">
             <Parameter Name="cja_Descripcion" Mode="In" Type="String" />
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
             <Parameter Name="cja_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="cja_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCaja_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCaja_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCaja_Update_Result)">
             <Parameter Name="cja_Id" Mode="In" Type="Int16" />
             <Parameter Name="cja_Descripcion" Mode="In" Type="String" />
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
@@ -27767,7 +27767,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="clte_EsActivo" Mode="In" Type="Boolean" />
             <Parameter Name="clte_RazonInactivo" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCliente_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCliente_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCliente_Insert_Result)">
             <Parameter Name="tpi_Id" Mode="In" Type="Byte" />
             <Parameter Name="clte_Identificacion" Mode="In" Type="String" />
             <Parameter Name="clte_EsPersonaNatural" Mode="In" Type="Boolean" />
@@ -27797,7 +27797,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="clte_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="clte_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCliente_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCliente_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCliente_Update_Result)">
             <Parameter Name="clte_Id" Mode="In" Type="Int32" />
             <Parameter Name="tpi_Id" Mode="In" Type="Int32" />
             <Parameter Name="clte_Identificacion" Mode="In" Type="String" />
@@ -27842,7 +27842,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbCuponDescuento_Imprimir" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCuponDescuento_Imprimir_Result)">
           <Parameter Name="cdto_ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCuponDescuento_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCuponDescuento_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCuponDescuento_Insert_Result)">
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
             <Parameter Name="cdto_FechaEmision" Mode="In" Type="DateTime" />
             <Parameter Name="cdto_FechaVencimiento" Mode="In" Type="DateTime" />
@@ -27866,7 +27866,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="FechaInicio" Mode="In" Type="DateTime" />
             <Parameter Name="FechaFinal" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbCuponDescuento_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbCuponDescuento_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbCuponDescuento_Update_Result)">
             <Parameter Name="cdto_ID" Mode="In" Type="Int32" />
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
             <Parameter Name="cdto_FechaEmision" Mode="In" Type="DateTime" />
@@ -27891,7 +27891,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Edit" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Edit_Result)">
           <Parameter Name="ArqueoID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Insert_Result)">
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
             <Parameter Name="arqde_CantidadDenominacion" Mode="In" Type="Int16" />
@@ -27900,7 +27900,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="arqde_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Select_Result)" />
-          <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDenominacionArqueo_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Update_Result)">
             <Parameter Name="arqde_Id" Mode="In" Type="Int32" />
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
@@ -27921,7 +27921,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbDevolucion_GetDetalle_Editar" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDevolucion_GetDetalle_Editar_Result)">
           <Parameter Name="DEVOLUCIONDD_ID" Mode="In" Type="Int64" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDevolucion_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDevolucion_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDevolucion_Insert_Result)">
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="cja_Id" Mode="In" Type="Int16" />
             <Parameter Name="dev_Fecha" Mode="In" Type="DateTime" />
@@ -27929,7 +27929,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="dev_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="dev_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDevolucion_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDevolucion_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDevolucion_Update_Result)">
             <Parameter Name="dev_Id" Mode="In" Type="Int32" />
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="cja_Id" Mode="In" Type="Int16" />
@@ -27940,7 +27940,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="dev_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="dev_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDevolucionDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDevolucionDetalle_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDevolucionDetalle_Insert_Result)">
             <Parameter Name="dev_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="devd_CantidadProducto" Mode="In" Type="Decimal" />
@@ -27949,7 +27949,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="devd_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="devd_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDevolucionDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDevolucionDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDevolucionDetalle_Update_Result)">
             <Parameter Name="devd_Id" Mode="In" Type="Int32" />
             <Parameter Name="dev_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
@@ -27961,13 +27961,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="devd_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="devd_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDocumentoFiscal_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDocumentoFiscal_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDocumentoFiscal_Insert_Result)">
             <Parameter Name="dfisc_Id" Mode="In" Type="String" />
             <Parameter Name="dfisc_Descripcion" Mode="In" Type="String" />
             <Parameter Name="dfisc_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="dfisc_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbDocumentoFiscal_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbDocumentoFiscal_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbDocumentoFiscal_Update_Result)">
             <Parameter Name="dfisc_Id" Mode="In" Type="String" />
             <Parameter Name="dfisc_Descripcion" Mode="In" Type="String" />
             <Parameter Name="dfisc_UsuarioCrea" Mode="In" Type="Int32" />
@@ -27975,12 +27975,12 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="dfisc_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="dfisc_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoFactura_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoFactura_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoFactura_Insert_Result)">
             <Parameter Name="esfac_Descripcion" Mode="In" Type="String" />
             <Parameter Name="esfac_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="esfac_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoFactura_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoFactura_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoFactura_Update_Result)">
             <Parameter Name="esfac_Id" Mode="In" Type="Byte" />
             <Parameter Name="esfac_Descripcion" Mode="In" Type="String" />
             <Parameter Name="esfac_UsuarioCrea" Mode="In" Type="Int32" />
@@ -27988,12 +27988,12 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="esfac_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="esfac_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoPedido_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoPedido_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoPedido_Insert_Result)">
             <Parameter Name="esped_Descripcion" Mode="In" Type="String" />
             <Parameter Name="esped_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="esped_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoPedido_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoPedido_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoPedido_Update_Result)">
             <Parameter Name="esped_Id" Mode="In" Type="Byte" />
             <Parameter Name="esped_Descripcion" Mode="In" Type="String" />
             <Parameter Name="esped_UsuarioCrea" Mode="In" Type="Int32" />
@@ -28001,12 +28001,12 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="esped_FechaAgrego" Mode="In" Type="DateTime" />
             <Parameter Name="esped_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoSolicitudCredito_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoSolicitudCredito_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoSolicitudCredito_Insert_Result)">
             <Parameter Name="escre_Descripcion" Mode="In" Type="String" />
             <Parameter Name="escre_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="escre_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbEstadoSolicitudCredito_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbEstadoSolicitudCredito_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbEstadoSolicitudCredito_Update_Result)">
             <Parameter Name="escre_Id" Mode="In" Type="Byte" />
             <Parameter Name="escre_Descripcion" Mode="In" Type="String" />
             <Parameter Name="escre_UsuarioCrea" Mode="In" Type="Int32" />
@@ -28020,7 +28020,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="exo_UsuarioModifa" Mode="In" Type="Int32" />
             <Parameter Name="exo_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbExoneracion_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbExoneracion_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Insert_Result)">
             <Parameter Name="exo_Documento" Mode="In" Type="String" />
             <Parameter Name="exo_ExoneracionActiva" Mode="In" Type="Boolean" />
             <Parameter Name="exo_FechaInicialVigencia" Mode="In" Type="DateTime" />
@@ -28030,7 +28030,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="exo_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="UDP_Vent_tbExoneracion_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Select_Result)" />
-          <FunctionImport Name="UDP_Vent_tbExoneracion_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbExoneracion_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Update_Result)">
             <Parameter Name="exo_Id" Mode="In" Type="Int32" />
             <Parameter Name="exo_Documento" Mode="In" Type="String" />
             <Parameter Name="exo_ExoneracionActiva" Mode="In" Type="Boolean" />
@@ -28073,7 +28073,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbFactura_Imprimir" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbFactura_Imprimir_Result)">
           <Parameter Name="fact_Id" Mode="In" Type="Int64" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbFactura_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbFactura_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbFactura_Insert_Result)">
             <Parameter Name="fact_Codigo" Mode="In" Type="String" />
             <Parameter Name="fact_Fecha" Mode="In" Type="DateTime" />
             <Parameter Name="esfac_Id" Mode="In" Type="Byte" />
@@ -28129,7 +28129,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="UsuarioId" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbFactura_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbFactura_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbFactura_Update_Result)">
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="fact_Codigo" Mode="In" Type="String" />
             <Parameter Name="fact_Fecha" Mode="In" Type="DateTime" />
@@ -28154,7 +28154,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="fact_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="fact_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbFacturaDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbFacturaDetalle_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbFacturaDetalle_Insert_Result)">
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="factd_Cantidad" Mode="In" Type="Decimal" />
@@ -28165,7 +28165,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="factd_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="factd_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbFacturaDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbFacturaDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbFacturaDetalle_Update_Result)">
             <Parameter Name="factd_Id" Mode="In" Type="Int16" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="factd_Cantidad" Mode="In" Type="Decimal" />
@@ -28189,7 +28189,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="facth_Id" Mode="In" Type="Byte" />
             <Parameter Name="facth_Fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbListadoPrecioDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbListadoPrecioDetalle_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Insert_Result)">
             <Parameter Name="listp_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="lispd_PrecioMayorista" Mode="In" Type="Decimal" />
@@ -28202,7 +28202,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbListadoPrecioDetalle_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Select_Result)">
           <Parameter Name="IDLISTAPRECIO" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbListadoPrecioDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbListadoPrecioDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Update_Result)">
             <Parameter Name="lispd_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="lispd_PrecioMayorista" Mode="In" Type="Decimal" />
@@ -28218,7 +28218,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="listp_Id" Mode="In" Type="Int32" />
             <Parameter Name="listp_EsActivo" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbListaPrecio_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbListaPrecio_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbListaPrecio_Insert_Result)">
             <Parameter Name="listp_Nombre" Mode="In" Type="String" />
             <Parameter Name="listp_EsActivo" Mode="In" Type="Boolean" />
             <Parameter Name="listp_FechaInicioVigencia" Mode="In" Type="DateTime" />
@@ -28230,7 +28230,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbListaPrecio_UltimaFechaVigente" ReturnType="Collection(DateTime)">
           <Parameter Name="PRIORIDAD" Mode="In" Type="Int16" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbListaPrecio_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbListaPrecio_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbListaPrecio_Update_Result)">
             <Parameter Name="listp_Id" Mode="In" Type="Int32" />
             <Parameter Name="listp_Nombre" Mode="In" Type="String" />
             <Parameter Name="listp_EsActivo" Mode="In" Type="Boolean" />
@@ -28245,7 +28245,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Apertura_Details" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Apertura_Details_Result)">
           <Parameter Name="IdMovimiento" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Apertura_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Apertura_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Apertura_Insert_Result)">
             <Parameter Name="cja_Id" Mode="In" Type="Int16" />
             <Parameter Name="mocja_FechaApertura" Mode="In" Type="DateTime" />
             <Parameter Name="mocja_UsuarioApertura" Mode="In" Type="Int32" />
@@ -28263,7 +28263,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Imprimir" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Imprimir_Result)">
           <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Insert_Result)">
             <Parameter Name="cja_Id" Mode="In" Type="Int16" />
             <Parameter Name="usu_Id" Mode="In" Type="Int32" />
             <Parameter Name="mocja_UsuarioApertura" Mode="In" Type="Int32" />
@@ -28274,7 +28274,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="mocja_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="mocja_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbMovimientoCaja_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Update_Result)">
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="mocja_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="mocja_FechaCrea" Mode="In" Type="DateTime" />
@@ -28300,7 +28300,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbNotaCredito_Imprimir" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Imprimir_Result)">
           <Parameter Name="nocre_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbNotaCredito_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbNotaCredito_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Insert_Result)">
             <Parameter Name="nocre_Codigo" Mode="In" Type="String" />
             <Parameter Name="dev_Id" Mode="In" Type="Int32" />
             <Parameter Name="clte_Id" Mode="In" Type="Int32" />
@@ -28328,7 +28328,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="clte_EsPersonaNatural" Mode="In" Type="Boolean" />
           </FunctionImport>
           <FunctionImport Name="UDP_Vent_tbNotaCredito_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Select_Result)" />
-          <FunctionImport Name="UDP_Vent_tbNotaCredito_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbNotaCredito_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Update_Result)">
             <Parameter Name="nocre_Id" Mode="In" Type="Int16" />
             <Parameter Name="nocre_Codigo" Mode="In" Type="String" />
             <Parameter Name="dev_Id" Mode="In" Type="Int32" />
@@ -28366,7 +28366,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pago_Id" Mode="In" Type="Int32" />
             <Parameter Name="pago_EstaImpreso" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPago_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPago_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPago_Insert_Result)">
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="tpa_Id" Mode="In" Type="Int16" />
             <Parameter Name="pago_FechaElaboracion" Mode="In" Type="DateTime" />
@@ -28384,7 +28384,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pago_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="pago_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPago_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPago_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPago_Update_Result)">
             <Parameter Name="pago_Id" Mode="In" Type="Int32" />
             <Parameter Name="fact_Id" Mode="In" Type="Int64" />
             <Parameter Name="tpa_Id" Mode="In" Type="Int16" />
@@ -28402,7 +28402,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pago_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="pago_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPagosArqueo_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPagosArqueo_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPagosArqueo_Insert_Result1)">
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="tpa_Id" Mode="In" Type="Int16" />
             <Parameter Name="arqpg_PagosSistema" Mode="In" Type="Decimal" />
@@ -28430,7 +28430,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="ped_Id" Mode="In" Type="Int32" />
             <Parameter Name="fact_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPedido_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPedido_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPedido_Insert_Result)">
             <Parameter Name="esped_Id" Mode="In" Type="Byte" />
             <Parameter Name="ped_FechaElaboracion" Mode="In" Type="DateTime" />
             <Parameter Name="ped_FechaEntrega" Mode="In" Type="DateTime" />
@@ -28445,7 +28445,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbPedido_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPedido_Select_Result)">
           <Parameter Name="ped_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPedido_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPedido_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPedido_Update_Result)">
             <Parameter Name="ped_Id" Mode="In" Type="Int32" />
             <Parameter Name="esped_Id" Mode="In" Type="Byte" />
             <Parameter Name="ped_FechaElaboracion" Mode="In" Type="DateTime" />
@@ -28460,7 +28460,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="ped_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="ped_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPedidoDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPedidoDetalle_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPedidoDetalle_Insert_Result)">
             <Parameter Name="ped_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="pedd_Cantidad" Mode="In" Type="Decimal" />
@@ -28468,7 +28468,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pedd_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="pedd_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPedidoDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPedidoDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPedidoDetalle_Update_Result)">
             <Parameter Name="pedd_Id" Mode="In" Type="Int32" />
             <Parameter Name="prod_Codigo" Mode="In" Type="String" />
             <Parameter Name="pedd_Cantidad" Mode="In" Type="Decimal" />
@@ -28478,12 +28478,12 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pedd_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="pedd_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPuntoEmision_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPuntoEmision_Insert">
             <Parameter Name="pemi_NumeroCAI" Mode="In" Type="String" />
             <Parameter Name="pemi_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="pemi_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPuntoEmision_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPuntoEmision_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPuntoEmision_Update_Result)">
             <Parameter Name="pemi_Id" Mode="In" Type="Int32" />
             <Parameter Name="pemi_NumeroCAI" Mode="In" Type="String" />
             <Parameter Name="pemi_UsuarioCrea" Mode="In" Type="Int32" />
@@ -28491,7 +28491,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pemi_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="pemi_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPuntoEmisionDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPuntoEmisionDetalle_Insert">
             <Parameter Name="pemi_Id" Mode="In" Type="Int32" />
             <Parameter Name="dfisc_Id" Mode="In" Type="String" />
             <Parameter Name="pemid_RangoInicio" Mode="In" Type="String" />
@@ -28511,7 +28511,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pemid_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="pemid_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbPuntoEmisionDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbPuntoEmisionDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbPuntoEmisionDetalle_Update_Result)">
             <Parameter Name="pemid_Id" Mode="In" Type="Int32" />
             <Parameter Name="dfisc_Id" Mode="In" Type="String" />
             <Parameter Name="pemid_RangoInicio" Mode="In" Type="String" />
@@ -28523,7 +28523,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="pemid_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="pemid_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Aprobar" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Aprobar" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Aprobar_Result)">
             <Parameter Name="cred_Id" Mode="In" Type="Int32" />
             <Parameter Name="escre_Id" Mode="In" Type="Byte" />
             <Parameter Name="cred_FechaAprobacion" Mode="In" Type="DateTime" />
@@ -28545,7 +28545,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="cred_Id" Mode="In" Type="Int32" />
             <Parameter Name="escre_Id" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Insert_Result)">
             <Parameter Name="clte_Id" Mode="In" Type="Int32" />
             <Parameter Name="escre_Id" Mode="In" Type="Byte" />
             <Parameter Name="cred_FechaSolicitud" Mode="In" Type="DateTime" />
@@ -28558,7 +28558,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="UsuarioId" Mode="In" Type="String" />
             <Parameter Name="password" Mode="In" Type="String" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudCredito_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Update_Result)">
             <Parameter Name="cred_Id" Mode="In" Type="Int32" />
             <Parameter Name="clte_Id" Mode="In" Type="Int32" />
             <Parameter Name="escre_Id" Mode="In" Type="Byte" />
@@ -28573,7 +28573,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="cred_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="cred_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Apertura_Insert_Result)">
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="solef_EsApertura" Mode="In" Type="Boolean" />
             <Parameter Name="solef_FechaEntrega" Mode="In" Type="DateTime" />
@@ -28601,7 +28601,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Imprimir" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Imprimir_Result)">
           <Parameter Name="SOLEF_ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Insert_Result)">
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="mnda_Id" Mode="In" Type="Int16" />
             <Parameter Name="solef_UsuarioCrea" Mode="In" Type="Int32" />
@@ -28610,7 +28610,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Recargo" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Recargo_Result)">
           <Parameter Name="USER_ID" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Update_Result)">
             <Parameter Name="solef_Id" Mode="In" Type="Int32" />
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="solef_EsApertura" Mode="In" Type="Boolean" />
@@ -28621,7 +28621,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="solef_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="solef_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Update_Entrega" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivo_Update_Entrega" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Update_Entrega_Result)">
             <Parameter Name="solef_Id" Mode="In" Type="Int32" />
             <Parameter Name="mocja_Id" Mode="In" Type="Int32" />
             <Parameter Name="solef_EsApertura" Mode="In" Type="Boolean" />
@@ -28630,7 +28630,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="mnda_Id" Mode="In" Type="Int16" />
             <Parameter Name="solef_EsAnulada" Mode="In" Type="Boolean" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert_Result)">
             <Parameter Name="solef_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
             <Parameter Name="soled_CantidadSolicitada" Mode="In" Type="Int16" />
@@ -28639,7 +28639,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="soled_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="soled_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update_Result)">
             <Parameter Name="soled_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
             <Parameter Name="soled_CantidadSolicitada" Mode="In" Type="Int16" />
@@ -28649,7 +28649,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Detalle" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Detalle_Result)">
           <Parameter Name="IDSOLICITUD" Mode="In" Type="Int32" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Insert_Result)">
             <Parameter Name="solef_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
             <Parameter Name="soled_CantidadSolicitada" Mode="In" Type="Int16" />
@@ -28657,7 +28657,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="soled_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
           <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Select" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Select_Result)" />
-          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSolicitudEfectivoDetalle_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Update_Result)">
             <Parameter Name="soled_Id" Mode="In" Type="Int32" />
             <Parameter Name="deno_Id" Mode="In" Type="Int16" />
             <Parameter Name="soled_CantidadSolicitada" Mode="In" Type="Int16" />
@@ -28668,7 +28668,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="soled_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="soled_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSucursal_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSucursal_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSucursal_Insert_Result)">
             <Parameter Name="mun_Codigo" Mode="In" Type="String" />
             <Parameter Name="bod_Id" Mode="In" Type="Int32" />
             <Parameter Name="pemi_Id" Mode="In" Type="Int32" />
@@ -28679,7 +28679,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="suc_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="suc_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbSucursal_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbSucursal_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbSucursal_Update_Result)">
             <Parameter Name="suc_Id" Mode="In" Type="Int32" />
             <Parameter Name="mun_Codigo" Mode="In" Type="String" />
             <Parameter Name="bod_Id" Mode="In" Type="Int32" />
@@ -28693,7 +28693,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="suc_UsuarioModifica" Mode="In" Type="Int32" />
             <Parameter Name="suc_FechaModifica" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbTipoPago_Insert" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbTipoPago_Insert" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbTipoPago_Insert_Result)">
             <Parameter Name="tpa_Descripcion" Mode="In" Type="String" />
             <Parameter Name="tpa_Emisor" Mode="In" Type="Boolean" />
             <Parameter Name="tpa_Cuenta" Mode="In" Type="Boolean" />
@@ -28702,7 +28702,7 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             <Parameter Name="tpa_UsuarioCrea" Mode="In" Type="Int32" />
             <Parameter Name="tpa_FechaCrea" Mode="In" Type="DateTime" />
           </FunctionImport>
-          <FunctionImport Name="UDP_Vent_tbTipoPago_Update" ReturnType="Collection(String)">
+          <FunctionImport Name="UDP_Vent_tbTipoPago_Update" ReturnType="Collection(ERP_GMEDINAModel.UDP_Vent_tbTipoPago_Update_Result)">
             <Parameter Name="tpa_Id" Mode="In" Type="Int16" />
             <Parameter Name="tpa_Descripcion" Mode="In" Type="String" />
             <Parameter Name="tpa_Emisor" Mode="In" Type="Boolean" />
@@ -50515,6 +50515,234 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
         <ComplexType Name="UDP_Inv_tbTipoSalida_Update_Result">
           <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
         </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCuponDescuento_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCuponDescuento_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPedidoDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPedidoDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPedido_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPedido_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbAccesoRol_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbRolEstado_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbRol_Inactivar_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="2" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbRol_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbRol_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbRolesUsuario_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbUsuario_Estado_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbUsuario_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbUsuario_PasswordRestore_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbUsuario_PasswordUpdate_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbUsuario_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCaja_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCaja_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCliente_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbCliente_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDenominacionArqueo_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDenominacionArqueo_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDevolucionDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDevolucionDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbObjeto_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbObjeto_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Acce_tbObjeto_Update_Estado_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDevolucion_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDevolucion_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDocumentoFiscal_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbDocumentoFiscal_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="false" MaxLength="2" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoPedido_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoPedido_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoSolicitudCredito_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoSolicitudCredito_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoFactura_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbEstadoFactura_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbExoneracion_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbFacturaDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbFacturaDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbFactura_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbFactura_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbListadoPrecioDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbListadoPrecioDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbListaPrecio_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbListaPrecio_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbMovimientoCaja_Apertura_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbMovimientoCaja_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbMovimientoCaja_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbNotaCredito_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbNotaCredito_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPago_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPago_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbExoneracion_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPagosArqueo_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPuntoEmision_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPuntoEmision_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPuntoEmisionDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPuntoEmisionDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbPagosArqueo_Insert_Result1">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudCredito_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudCredito_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivoDetalle_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivoDetalle_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudCredito_Aprobar_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivo_Apertura_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivo_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivo_Update_Entrega_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSolicitudEfectivo_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSucursal_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbSucursal_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbTipoPago_Insert_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
+        <ComplexType Name="UDP_Vent_tbTipoPago_Update_Result">
+          <Property Type="String" Name="MensajeError" Nullable="true" MaxLength="30" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -52648,24 +52876,108 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Acce_tbAccesoRol_Delete" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbAccesoRol_Delete" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbAccesoRol_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbAccesoRol_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbAccesoRol_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbAccesoRol_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbAccesoRol_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Acce_tbAccesoRol_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbAccesoRol_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Update_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Update_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Inactivar" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Inactivar" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolEstado_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolEstado_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbObjeto_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbObjeto_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbObjeto_Update_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbObjeto_Update_Estado" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbObjeto_Update_Estado_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Inactivar" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Inactivar" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbRol_Inactivar_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbRol_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRol_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRol_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbRol_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolEstado_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolEstado_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbRolEstado_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolesUsuario_Delete" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolesUsuario_Delete" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolesUsuario_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolesUsuario_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolesUsuario_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolesUsuario_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbRolesUsuario_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Acce_tbRolesUsuario_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbRolesUsuario_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_PasswordRestore" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_PasswordRestore" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_PasswordUpdate" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_PasswordUpdate" />
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Estado" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbUsuario_Estado_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbUsuario_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_PasswordRestore" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_PasswordRestore" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbUsuario_PasswordRestore_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_PasswordUpdate" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_PasswordUpdate" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbUsuario_PasswordUpdate_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Select" />
-          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Acce_tbUsuario_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Acce_tbUsuario_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Acce_tbUsuario_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Plani_tbDeduccionImpuestoVecinal_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Plani_tbDeduccionImpuestoVecinal_Insert" />
           <FunctionImportMapping FunctionImportName="SDP_Gral_tbEmpleado_Select" FunctionName="ERP_GMEDINAModel.Store.SDP_Gral_tbEmpleado_Select">
             <ResultMapping>
@@ -54292,11 +54604,35 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_SolicitudCredito_SolicitudesPorAprobarReporte" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_SolicitudCredito_SolicitudesPorAprobarReporte" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCaja_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCaja_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCaja_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCaja_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCaja_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCaja_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCaja_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCaja_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCaja_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCaja_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCliente_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCliente_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCliente_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCliente_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCliente_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCliente_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCliente_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCliente_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCliente_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCliente_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCliente_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCliente_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Anulado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Anulado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_EsImpreso" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_EsImpreso" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Imprimir" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Imprimir">
@@ -54316,7 +54652,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCuponDescuento_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Redimido" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Redimido" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Reporte" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Reporte">
             <ResultMapping>
@@ -54335,7 +54677,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuento_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuento_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCuponDescuento_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbCuponDescuentoSelect" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbCuponDescuentoSelect">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbCuponDescuentoSelect_Result">
@@ -54377,7 +54725,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDenominacionArqueo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDenominacionArqueo_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDenominacionArqueo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDenominacionArqueo_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbDenominacionArqueo_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDenominacionArqueo_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Select_Result">
@@ -54390,7 +54744,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDenominacionArqueo_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDenominacionArqueo_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDenominacionArqueo_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDenominacionArqueo_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDenominacionArqueo_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_Estado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_GetDetalle" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_GetDetalle">
             <ResultMapping>
@@ -54428,20 +54788,98 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucionDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucionDetalle_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucionDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucionDetalle_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDocumentoFiscal_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDocumentoFiscal_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDocumentoFiscal_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDocumentoFiscal_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoFactura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoFactura_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoFactura_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoFactura_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoPedido_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoPedido_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoPedido_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoPedido_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoSolicitudCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoSolicitudCredito_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoSolicitudCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoSolicitudCredito_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDevolucion_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucion_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucion_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDevolucion_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucionDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucionDetalle_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDevolucionDetalle_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDevolucionDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDevolucionDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDevolucionDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDocumentoFiscal_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDocumentoFiscal_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDocumentoFiscal_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbDocumentoFiscal_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbDocumentoFiscal_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbDocumentoFiscal_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoFactura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoFactura_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoFactura_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoFactura_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoFactura_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoFactura_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoPedido_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoPedido_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoPedido_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoPedido_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoPedido_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoPedido_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoSolicitudCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoSolicitudCredito_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoSolicitudCredito_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbEstadoSolicitudCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbEstadoSolicitudCredito_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbEstadoSolicitudCredito_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Select_Result">
@@ -54450,7 +54888,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbExoneracion_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbExoneracion_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbExoneracion_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_BuscarListaPrecio" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_BuscarListaPrecio" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_ConsultaBodega" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_ConsultaBodega">
             <ResultMapping>
@@ -54529,7 +54973,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbFactura_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_Insert_mejorado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_Insert_mejorado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_ObtenerCai_CodigoFactura" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_ObtenerCai_CodigoFactura">
             <ResultMapping>
@@ -54542,12 +54992,36 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_ObtenerCai_CodigoFactura_mejora" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_ObtenerCai_CodigoFactura_mejora" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_RolSupervisorCaja" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_RolSupervisorCaja" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaDetalle_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaDetalle_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFactura_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFactura_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbFactura_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaDetalle_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbFacturaDetalle_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbFacturaDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaHistorica_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaHistorica_Insert" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbFacturaHistorica_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbFacturaHistorica_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListadoPrecioDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListadoPrecioDetalle_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListadoPrecioDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListadoPrecioDetalle_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbListadoPrecioDetalle_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListadoPrecioDetalle_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Select_Result">
@@ -54561,11 +55035,29 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListadoPrecioDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListadoPrecioDetalle_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListadoPrecioDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListadoPrecioDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbListadoPrecioDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbListaPrecio_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_UltimaFechaVigente" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_UltimaFechaVigente" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbListaPrecio_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbListaPrecio_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbListaPrecio_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Apertura_Details" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Apertura_Details">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Apertura_Details_Result">
@@ -54584,7 +55076,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Apertura_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Apertura_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Apertura_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_GetUsuarioApertura" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_GetUsuarioApertura">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_GetUsuarioApertura_Result">
@@ -54621,8 +55119,20 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbMovimientoCaja_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbMovimientoCaja_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbMovimientoCaja_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Anulado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Anulado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Caja" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Caja">
             <ResultMapping>
@@ -54662,7 +55172,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Redimido" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Redimido" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Reporte" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Reporte">
             <ResultMapping>
@@ -54695,7 +55211,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCredito_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbNotaCredito_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbNotaCreditoSelect" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbNotaCreditoSelect">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbNotaCreditoSelect_Result">
@@ -54731,13 +55253,37 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
             </ResultMapping>
           </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPago_ImprimirEstaImpreso" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPago_ImprimirEstaImpreso" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPago_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPago_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPago_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPago_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPagosArqueo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPagosArqueo_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPago_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPago_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPago_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPago_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPago_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPago_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPagosArqueo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPagosArqueo_Insert" >
+          <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPagosArqueo_Insert_Result1">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPagosArqueo_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPagosArqueo_Update" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Estado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Factura" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Factura" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPedido_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPedido_Select_Result">
@@ -54756,21 +55302,77 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedidoDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedidoDetalle_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedidoDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedidoDetalle_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmision_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmision_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmision_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmision_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmisionDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmisionDetalle_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedido_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedido_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPedido_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedidoDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedidoDetalle_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPedidoDetalle_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPedidoDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPedidoDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPedidoDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmision_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmision_Insert" >
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmision_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmision_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPuntoEmision_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmisionDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmisionDetalle_Insert" >
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmisionDetalle_Insert_Prueba" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmisionDetalle_Insert_Prueba" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmisionDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmisionDetalle_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Aprobar" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Aprobar" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbPuntoEmisionDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbPuntoEmisionDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbPuntoEmisionDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Aprobar" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Aprobar" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Aprobar_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Denegar" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Denegar" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Estado" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_RolGerenteCreditosCobranza" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_RolGerenteCreditosCobranza" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudCredito_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudCredito_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudCredito_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Apertura_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Apertura_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_DatosEncabezado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_DatosEncabezado">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_DatosEncabezado_Result">
@@ -54823,7 +55425,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Recargo" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Recargo">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Recargo_Result">
@@ -54837,10 +55445,34 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Update_Entrega" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Update_Entrega" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivo_Update_Entrega" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivo_Update_Entrega" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivo_Update_Entrega_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Apertura_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_CantidadSolicitada_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Detalle" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Detalle">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Detalle_Result">
@@ -54850,7 +55482,13 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Insert" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Select" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Select">
             <ResultMapping>
               <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Select_Result">
@@ -54864,11 +55502,41 @@ advertencia 6002: La tabla o vista 'ERP_GMEDINA2.Vent.UDV_Vent_VentasPorCaja_Ent
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSucursal_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSucursal_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSucursal_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSucursal_Update" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbTipoPago_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbTipoPago_Insert" />
-          <FunctionImportMapping FunctionImportName="UDP_Vent_tbTipoPago_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbTipoPago_Update" />
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSolicitudEfectivoDetalle_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSolicitudEfectivoDetalle_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSolicitudEfectivoDetalle_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSucursal_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSucursal_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSucursal_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbSucursal_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbSucursal_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbSucursal_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbTipoPago_Insert" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbTipoPago_Insert" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbTipoPago_Insert_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="UDP_Vent_tbTipoPago_Update" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbTipoPago_Update" >
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ERP_GMEDINAModel.UDP_Vent_tbTipoPago_Update_Result">
+                <ScalarProperty Name="MensajeError" ColumnName="MensajeError" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbTipoTaller_Estado" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbTipoTaller_Estado" />
           <FunctionImportMapping FunctionImportName="UDP_Vent_tbUsuario_Rol_Apertura" FunctionName="ERP_GMEDINAModel.Store.UDP_Vent_tbUsuario_Rol_Apertura">
             <ResultMapping>
